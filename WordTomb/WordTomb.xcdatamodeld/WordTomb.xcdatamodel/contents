@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Category" representedClassName="Category" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="Integer 32" minValueString="1" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="String" storedInTruthFile="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="has" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User_Category" inverseName="has" inverseEntity="User_Category" syncable="YES"/>
+        <relationship name="hasLevel" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Level_Category" inverseName="has" inverseEntity="Level_Category" syncable="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="Hint" representedClassName="Hint" syncable="YES" codeGenerationType="class">
+        <attribute name="category_hintId" optional="YES" attributeType="String" valueTransformerName="id" customClassName="Category" syncable="YES"/>
+        <attribute name="hint" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="belongsTo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Question" inverseName="has" inverseEntity="Question" syncable="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="Level" representedClassName="Level" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="has" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Question" inverseName="belongsTo" inverseEntity="Question" syncable="YES"/>
+        <relationship name="hasLevel" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Level_Category" inverseName="belongsTo" inverseEntity="Level_Category" syncable="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="Level_Category" representedClassName="Level_Category" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="leveli_categoryId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="minCoins" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="belongsTo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Level" inverseName="hasLevel" inverseEntity="Level" syncable="YES"/>
+        <relationship name="has" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="hasLevel" inverseEntity="Category" syncable="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="Question" representedClassName="Question" syncable="YES" codeGenerationType="class">
+        <attribute name="answer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="clue" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="belongsTo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Level" inverseName="has" inverseEntity="Level" syncable="YES"/>
+        <relationship name="has" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Hint" inverseName="belongsTo" inverseEntity="Hint" syncable="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="profileImageUrl" optional="YES" attributeType="URI" storedInTruthFile="YES" syncable="YES"/>
+        <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="has" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User_Category" inverseName="belongsTo" inverseEntity="User_Category" syncable="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="User_Category" representedClassName="User_Category" syncable="YES" codeGenerationType="class">
+        <attribute name="dateTime" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="score" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="user_categoryId" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="belongsTo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="has" inverseEntity="User" syncable="YES"/>
+        <relationship name="has" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="has" inverseEntity="Category" syncable="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="dateTime"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <elements>
+        <element name="User" positionX="-380" positionY="-243" width="128" height="133"/>
+        <element name="Category" positionX="-126" positionY="8" width="128" height="118"/>
+        <element name="Question" positionX="178" positionY="287" width="128" height="118"/>
+        <element name="Hint" positionX="430" positionY="198" width="128" height="103"/>
+        <element name="Level" positionX="-173" positionY="518" width="128" height="103"/>
+        <element name="User_Category" positionX="-414" positionY="36" width="128" height="118"/>
+        <element name="Level_Category" positionX="-83" positionY="170" width="128" height="118"/>
+    </elements>
+</model>
