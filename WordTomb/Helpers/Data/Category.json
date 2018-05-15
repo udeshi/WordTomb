@@ -1,0 +1,147 @@
+
+{"results": [ {
+             "id": 1,
+             "name": "Animals",
+             "imageName": "animals",
+             "questions": [
+                           {
+                           "id": 1,
+                           "clue": "A wrinkled face dog that has a curly tail",
+                           "answer": "PUG",
+                           "level": 1,
+                           "noOfCoins": 40
+                           },
+                           {
+                           "id": 3,
+                           "clue": "This extinct bird was featured in Alice in Wonderland",
+                           "answer": "DODO",
+                           "level": 1,
+                           "noOfCoins": 60
+                           },
+                           {
+                           "id": 4,
+                           "clue": "This fish has a long jaw needle like teeth and is covered with hard scales",
+                           "answer": "GAR",
+                           "level": 1,
+                           "noOfCoins": 50
+                           },
+                           {
+                           "id": 12,
+                           "clue": "Small web-footed swimming bird",
+                           "answer": "DUCK",
+                           "level": 1,
+                           "noOfCoins": 40
+                           },
+                           {
+                           "id": 14,
+                           "clue": "A black bird that is considered one of the worlds smartest animals",
+                           "answer": "CROW",
+                           "level": 1,
+                           "noOfCoins": 20
+                           },
+                           {
+                           "id": 15,
+                           "clue": "A faithful animal that is a popular pet",
+                           "answer": "DOG",
+                           "level": 1,
+                           "noOfCoins": 30
+                           },
+                           {
+                           "id": 16,
+                           "clue": "This aquatic invertebrate is often called calamari when cooked",
+                           "answer": "SQUID",
+                           "level": 2,
+                           "noOfCoins": 30
+                           },
+                           {
+                           "id": 13,
+                           "clue": "A goat antelope with vertical horns hooked backwards near the tip",
+                           "answer": "CHAMOIS",
+                           "level": 2,
+                           "noOfCoins": 50
+                           },
+                           {
+                           "id": 2,
+                           "clue": "You wouldnt want to swim in the Amazon when these fish are around",
+                           "answer": "PIRANHA",
+                           "level": 2,
+                           "noOfCoins": 40
+                           },
+                           {
+                           "id": 5,
+                           "clue": "Large flightless bird that is closely related to the ostrich and emu",
+                           "answer": "RHEA",
+                           "level": 2,
+                           "noOfCoins": 60
+                           },
+                           {
+                           "id": 6,
+                           "clue": "Shares its name with a well loved character from the movie The Goonies",
+                           "answer": "SLOTH",
+                           "level": 2,
+                           "noOfCoins": 50
+                           },
+                           {
+                           "id": 7,
+                           "clue": "Shares its name with a well loved character from the movie The Goonies",
+                           "answer": "MOLLY",
+                           "level": 2,
+                           "noOfCoins": 40
+                           },
+                           {
+                           "id": 8,
+                           "clue": "A large flippered marine mammal with long tusks",
+                           "answer": "WALRUS",
+                           "level": 2,
+                           "noOfCoins": 60
+                           },
+                           {
+                           "id": 9,
+                           "clue": "Large flightless bird that is native to Australia",
+                           "answer": "EMU",
+                           "level": 2,
+                           "noOfCoins": 60
+                           },
+                           {
+                           "id": 10,
+                           "clue": "Insects related to butterflies",
+                           "answer": "MOTH",
+                           "level": 2,
+                           "noOfCoins": 30
+                           },
+                           {
+                           "id": 11,
+                           "clue": "This animal has the unfortunate myth of causing warts",
+                           "answer": "TOAD",
+                           "level": 2,
+                           "noOfCoins": 20
+                           }
+                           ]
+             }, {
+             "id": 2,
+             "name": "Sports",
+             "imageName": "sports"
+             },
+             {
+             "id": 3,
+             "name": "Technology",
+             "imageName": "technology"
+             },
+             {
+             "id": 4,
+             "name": "Music",
+             "imageName": "music"
+             },
+             {
+             "id": 5,
+             "name": "Movies",
+             "imageName": "movies"
+             },
+             {
+             "id": 6,
+             "name": "Underwater",
+             "imageName": "underwater"
+             }
+             ]
+}
+
