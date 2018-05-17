@@ -73,7 +73,11 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
             tempView.frame.size = self.view.frame.size
             self.view.addSubview(tempView)
                self.view.bringSubview(toFront: tempView)
-           }, completion: nil)
+           }, completion: { _ in
+                self.tableView.removeFromSuperview()
+           })
+            
+            
         
         }
 //        let levelsScreen = UIView(frame: CGRect(x:0,y:0, width: view.frame.size.width, height: view.frame.size.height))
