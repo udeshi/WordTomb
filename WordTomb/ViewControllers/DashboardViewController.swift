@@ -14,14 +14,12 @@ import GameplayKit
 class DashboardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     @IBOutlet weak var tableView: UITableView!
    
-    @IBOutlet weak var hamgurgerMenu: UIView!
     var categories: [Category] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         loadCategories()
         tableView.delegate = self
         tableView.dataSource = self
-        hamgurgerMenu.isHidden = true
     }
     
     func loadCategories () {
@@ -32,8 +30,12 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     
     
     @IBAction func menuButtonClicked(_ sender: Any) {
+//        let appDelegate  = UIApplication.shared.delegate as! AppDelegate
+//        let viewController = appDelegate.window!.rootViewController as! LoginViewController
+//        viewController.performSegue(withIdentifier: "DashboardNavigationController_Segue", sender: self)
+        self.performSegue(withIdentifier: "MenuViewController_Segue", sender: self)
         
-        UIView.transition(with: hamgurgerMenu, duration: 0.8, options: [.curveEaseInOut, .transitionCrossDissolve] , animations: { self.hamgurgerMenu.isHidden = !self.hamgurgerMenu.isHidden })
+//        UIView.transition(with: hamgurgerMenu, duration: 0.8, options: [.curveEaseInOut, .transitionCrossDissolve] , animations: { self.hamgurgerMenu.isHidden = !self.hamgurgerMenu.isHidden })
 //        UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn, animations: {
 //            self.hamgurgerMenu.layoutIfNeeded()
 //        }) { (animationComplete) in

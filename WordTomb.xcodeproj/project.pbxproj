@@ -29,6 +29,8 @@
 		0D7E7676209F3D9C003E6958 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7E7675209F3D9C003E6958 /* DashboardViewController.swift */; };
 		0D7E7679209F4A30003E6958 /* HamburgerMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D7E7678209F4A30003E6958 /* HamburgerMenu.xib */; };
 		0D7E767B209F4A59003E6958 /* HamburgerMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7E767A209F4A59003E6958 /* HamburgerMenu.swift */; };
+		0DA0D0A420ABA3800014EC9E /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA0D0A320ABA3800014EC9E /* UIButtonExtension.swift */; };
+		0DA0D0A720ABAF980014EC9E /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA0D0A620ABAF980014EC9E /* MenuViewController.swift */; };
 		0DAF221720A7BE5D001A9F98 /* JSonHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAF221620A7BE5D001A9F98 /* JSonHandler.swift */; };
 		0DAF221B20A802A5001A9F98 /* DashboardCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAF221A20A802A5001A9F98 /* DashboardCustomTableViewCell.swift */; };
 		0DAF221D20A853F1001A9F98 /* Chambers.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DAF221C20A853F1001A9F98 /* Chambers.xib */; };
@@ -37,6 +39,7 @@
 		0DAF222520A868E8001A9F98 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAF222420A868E8001A9F98 /* Game.swift */; };
 		0DAF222720A868FE001A9F98 /* Game.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DAF222620A868FE001A9F98 /* Game.xib */; };
 		0DAF222920A8765E001A9F98 /* CommonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAF222820A8765E001A9F98 /* CommonHelper.swift */; };
+		0DD4C05120ACFE1E00657830 /* MenuItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD4C05020ACFE1E00657830 /* MenuItemViewController.swift */; };
 		0DF31993209FCB27000F43A0 /* WordTomb.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0DF31991209FCB27000F43A0 /* WordTomb.xcdatamodeld */; };
 		0DF319B620A0019C000F43A0 /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF319B520A0019C000F43A0 /* CoreDataHandler.swift */; };
 		46E6413620A16C7A00E42796 /* SceneNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E6413520A16C7A00E42796 /* SceneNavigator.swift */; };
@@ -67,6 +70,8 @@
 		0D7E7675209F3D9C003E6958 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		0D7E7678209F4A30003E6958 /* HamburgerMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HamburgerMenu.xib; sourceTree = "<group>"; };
 		0D7E767A209F4A59003E6958 /* HamburgerMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerMenu.swift; sourceTree = "<group>"; };
+		0DA0D0A320ABA3800014EC9E /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		0DA0D0A620ABAF980014EC9E /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		0DAF221620A7BE5D001A9F98 /* JSonHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSonHandler.swift; sourceTree = "<group>"; };
 		0DAF221A20A802A5001A9F98 /* DashboardCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCustomTableViewCell.swift; sourceTree = "<group>"; };
 		0DAF221C20A853F1001A9F98 /* Chambers.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Chambers.xib; sourceTree = "<group>"; };
@@ -75,6 +80,7 @@
 		0DAF222420A868E8001A9F98 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		0DAF222620A868FE001A9F98 /* Game.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Game.xib; sourceTree = "<group>"; };
 		0DAF222820A8765E001A9F98 /* CommonHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonHelper.swift; sourceTree = "<group>"; };
+		0DD4C05020ACFE1E00657830 /* MenuItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemViewController.swift; sourceTree = "<group>"; };
 		0DF31992209FCB27000F43A0 /* WordTomb.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WordTomb.xcdatamodel; sourceTree = "<group>"; };
 		0DF319B520A0019C000F43A0 /* CoreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
 		46E6413520A16C7A00E42796 /* SceneNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneNavigator.swift; sourceTree = "<group>"; };
@@ -143,6 +149,7 @@
 		0D63CC6B20A0641800A4DE2A /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				0DA0D0A520ABA3880014EC9E /* Extensions_Protocols */,
 				0D6A825720A7264D002F2BBB /* Data */,
 				46E6413520A16C7A00E42796 /* SceneNavigator.swift */,
 				0DF319B520A0019C000F43A0 /* CoreDataHandler.swift */,
@@ -159,6 +166,8 @@
 				0D6552A1209EC663008146B5 /* LoginViewController.swift */,
 				0D7E766D209F3B3A003E6958 /* SignupController.swift */,
 				0D7E7675209F3D9C003E6958 /* DashboardViewController.swift */,
+				0DA0D0A620ABAF980014EC9E /* MenuViewController.swift */,
+				0DD4C05020ACFE1E00657830 /* MenuItemViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -194,6 +203,14 @@
 				0DAF222620A868FE001A9F98 /* Game.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		0DA0D0A520ABA3880014EC9E /* Extensions_Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				0DA0D0A320ABA3800014EC9E /* UIButtonExtension.swift */,
+			);
+			path = Extensions_Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DD4C05120ACFE1E00657830 /* MenuItemViewController.swift in Sources */,
 				46E6413620A16C7A00E42796 /* SceneNavigator.swift in Sources */,
 				0D7E7674209F3D89003E6958 /* DashboardScene.swift in Sources */,
 				0DF319B620A0019C000F43A0 /* CoreDataHandler.swift in Sources */,
@@ -283,6 +301,8 @@
 				0D7E7676209F3D9C003E6958 /* DashboardViewController.swift in Sources */,
 				0D7E767B209F4A59003E6958 /* HamburgerMenu.swift in Sources */,
 				0D6552A2209EC663008146B5 /* LoginViewController.swift in Sources */,
+				0DA0D0A720ABAF980014EC9E /* MenuViewController.swift in Sources */,
+				0DA0D0A420ABA3800014EC9E /* UIButtonExtension.swift in Sources */,
 				0D6A825920A7267B002F2BBB /* Category.swift in Sources */,
 				0D317F74209EBBF60004E560 /* GameScene.swift in Sources */,
 				0DAF222120A85F5E001A9F98 /* Chambers.swift in Sources */,

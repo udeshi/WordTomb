@@ -52,6 +52,7 @@ class LoginViewController: UIViewController {
         let signupScreen = SignupScene(size: CGSize(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
         
         signupScreen.scaleMode  = .aspectFill
+        signupScreen.size = self.view.frame.size
         currentView.presentScene(signupScreen, transition: reveal)
     }
     @IBAction func guestBtnClciked(_ sender: UIButton) {
