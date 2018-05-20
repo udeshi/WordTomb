@@ -31,36 +31,6 @@ class  CoreDataHandler: NSObject {
             return 0
         }
     }
-    private class func saveCategories (dictionary: AnyObject) -> NSManagedObject? {
-             let context = getContext()
-        if let category = NSEntityDescription.insertNewObject(forEntityName: "Category", into: context) as? Category{
-            print(dictionary)
-            category.id = (dictionary["id"] as? Int32)!
-            category.name = dictionary["name"] as? String
-            category.image = dictionary["imageName"] as? String
-            category.questions = dictionary["questions"] as? NSSet
-            return category
-        }
-        return nil
-    }
-    class func initializeGameDetails (){
-         let context = getContext()
-        let results = JSonHandler().loadJSon(filename: "Category")
-        let categories = results!["results"] as! [AnyObject]
-        print(categories)
-        for cat in categories{
-            print(cat)
-        }
-        _ =  categories.map{saveCategories(dictionary: $0)}
-        
-        do{
-            try context.save()
-            print("saved")
-        }
-        catch{
-                 print(error)
-        }
-    }
     
     
     class func saveUserDetails(userName: String, email: String, password:String) -> Bool{
@@ -103,32 +73,4 @@ class  CoreDataHandler: NSObject {
         }
     }
 
-    class func fetchCategoryDetails() ->[Category]{
-        let context = getContext()
-        let request: NSFetchRequest<Category> = Category.fetchRequest()
-        var categories: [Category] = []
-  
-        do{
-            categories = try context.fetch(request)
-            print(categories.count)
-            return categories
-        }catch{
-            return categories
-        }
-    }
-    
-    class func fetchQuestions (level: Int32)->[Question]{
-        let context = getContext()
-        let request: NSFetchRequest<Question> = Question.fetchRequest()
-        var questions: [Question] = []
-       // let predicate = NSPredicate(format: "level == %d", level)
-       // request.predicate = predicate
-        do{
-            questions = try context.fetch(request)
-            print(questions.count)
-            return questions
-        }catch{
-            return questions
-        }
-    }
 }

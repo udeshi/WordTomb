@@ -2,7 +2,7 @@
 //  Question+CoreDataProperties.swift
 //  WordTomb
 //
-//  Created by Frank Thamel on 5/17/18.
+//  Created by Udeshi on 5/19/18.
 //  Copyright © 2018 Udeshi. All rights reserved.
 //
 //
@@ -20,6 +20,8 @@ extension Question {
     @NSManaged public var answer: String?
     @NSManaged public var clue: String?
     @NSManaged public var id: Int32
+    @NSManaged public var level: Int32
+    @NSManaged public var noOfCoins: Int32
     @NSManaged public var belongsTo: Level?
     @NSManaged public var category: Category?
     @NSManaged public var hints: NSSet?

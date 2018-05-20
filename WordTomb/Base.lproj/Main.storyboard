@@ -1,16 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
     <device id="ipad10_5" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Game View Controller-->
+        <scene sceneID="jXM-tc-kxd">
+            <objects>
+                <viewController storyboardIdentifier="GameViewController" id="fby-ei-Wzk" customClass="GameViewController" customModule="WordTomb" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MXj-Rt-otF" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="8eH-nm-bnY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oDa-z9-Siv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2062" y="1101"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
@@ -295,7 +310,7 @@
         <scene sceneID="cn7-ln-9U1">
             <objects>
                 <viewController storyboardIdentifier="DashboardViewController" id="UHv-Oc-tLJ" customClass="DashboardViewController" customModule="WordTomb" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="zak-ho-hZE">
+                    <view key="view" contentMode="scaleToFill" id="zak-ho-hZE" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -328,6 +343,7 @@
                                                                     <subviews>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hox-VQ-8fS">
                                                                             <rect key="frame" x="0.0" y="0.0" width="300" height="194"/>
+                                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="300" id="Ytw-XS-Nml"/>
                                                                                 <constraint firstAttribute="height" constant="240" id="hXI-UT-z41"/>
@@ -388,6 +404,7 @@
                                                                         </label>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZGR-Xp-JRy">
                                                                             <rect key="frame" x="304" y="0.0" width="300" height="194"/>
+                                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="300" id="E74-YQ-Zwc"/>
                                                                                 <constraint firstAttribute="height" constant="240" id="hHV-vQ-Kmh"/>
@@ -471,7 +488,11 @@
                                 <constraint firstAttribute="trailing" secondItem="Mwr-s9-sJh" secondAttribute="trailing" constant="-63" id="nt2-21-cnB"/>
                             </constraints>
                         </view>
-                        <barButtonItem key="rightBarButtonItem" image="logoImage" id="ctB-yI-JMW"/>
+                        <barButtonItem key="rightBarButtonItem" image="logoImage" id="ctB-yI-JMW">
+                            <connections>
+                                <segue destination="fby-ei-Wzk" kind="show" identifier="GameNavigationController_Segue" id="Jrg-a6-X5b"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -640,6 +661,6 @@
         <image name="settings" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eMN-o7-XbP"/>
+        <segue reference="J0H-xw-4Y4"/>
     </inferredMetricsTieBreakers>
 </document>

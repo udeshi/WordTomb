@@ -12,6 +12,11 @@ import SpriteKit
 import GameplayKit
 
 class DashboardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+    
+    @IBOutlet weak var chambers: SKView!
+    var currentView : SKView!
+    
+    
     @IBOutlet weak var tableView: UITableView!
    
     var categories: [Category] = []
@@ -20,6 +25,12 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         loadCategories()
         tableView.delegate = self
         tableView.dataSource = self
+        let skView = self.view as! SKView
+        let scene = LoginScene(size: CGSize(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+        
+        scene.scaleMode  = .aspectFill
+        currentView = skView
+        skView.presentScene(scene)
     }
     
     func loadCategories () {
@@ -54,10 +65,14 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
             let cell = tableView.dequeueReusableCell(withIdentifier: "evenDashboardCellView") as! DashboardCustomTableViewCell
             cell.evenCategoryImage.image = UIImage(named: categories[indexPath.row].image!)
             cell.evenCategoryName.text = categories[indexPath.row].name
+            cell.backgroundColor = UIColor.clear
+            cell.evenCategoryImage.image?.resizableImage(withCapInsets: UIEdgeInsets(top:0,left:0,bottom:0,right:0), resizingMode: .stretch)
             return cell
         }else{
         let cell = tableView.dequeueReusableCell(withIdentifier: "oddDashboardCellView") as! DashboardCustomTableViewCell
         cell.oddCategoryImage.image = UIImage(named: categories[indexPath.row].image!)
+              cell.backgroundColor = UIColor.clear
+        cell.oddCategoryImage.image?.resizableImage(withCapInsets: UIEdgeInsets(top:0,left:0,bottom:0,right:0), resizingMode: .stretch)
         cell.oddCategoryName.text = categories[indexPath.row].name
         return cell
         }
@@ -67,22 +82,15 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         UserDefaultsHandler().save(data: categories[indexPath.row].id, key: "selectedCategoryId")
         
         //navigate to gamelevel
-        let tempView = Bundle.main.loadNibNamed("Chambers", owner: self, options: nil)?.first as? Chambers
-        if let tempView = tempView {
-           UIView.transition(with: self.view, duration: 0.5, options: UIViewAnimationOptions.transitionCurlUp,animations: {
-            tempView.frame.size = self.view.frame.size
-            self.view.addSubview(tempView)
-               self.view.bringSubview(toFront: tempView)
-           }, completion: { _ in
-                self.tableView.removeFromSuperview()
-           })
-            
-            
+        let reveal = SKTransition.flipHorizontal(withDuration: 1.0)
         
-        }
-//        let levelsScreen = UIView(frame: CGRect(x:0,y:0, width: view.frame.size.width, height: view.frame.size.height))
-//       
-//      
+       // let skView = self.chambers as! SKView
+        let chambersScreen = ChambersScene(size: CGSize(width:self.view.frame.width, height: self.view.frame.height))
+        
+        chambersScreen.scaleMode  = .aspectFill
+        chambersScreen.size = self.view.frame.size
+        currentView.presentScene(chambersScreen, transition: reveal)
+       
     }
 
 }
