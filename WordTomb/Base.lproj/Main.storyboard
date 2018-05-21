@@ -338,7 +338,7 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xBo-xY-ihX">
                                                             <rect key="frame" x="15" y="11" width="620" height="178"/>
                                                             <subviews>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="KwM-BB-22s">
+                                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KwM-BB-22s">
                                                                     <rect key="frame" x="8" y="8" width="604" height="194"/>
                                                                     <subviews>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hox-VQ-8fS">
@@ -350,8 +350,11 @@
                                                                             </constraints>
                                                                         </imageView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i08-Rr-HzL">
-                                                                            <rect key="frame" x="320" y="0.0" width="284" height="194"/>
+                                                                            <rect key="frame" x="300" y="0.0" width="304" height="194"/>
                                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="DXe-Xu-aTv"/>
+                                                                            </constraints>
                                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                                                             <color key="textColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
@@ -370,7 +373,7 @@
                                                     </subviews>
                                                     <color key="backgroundColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="bottomMargin" secondItem="xBo-xY-ihX" secondAttribute="bottom" constant="50" id="Fi4-DN-TLc"/>
+                                                        <constraint firstAttribute="bottomMargin" secondItem="xBo-xY-ihX" secondAttribute="bottom" id="Fi4-DN-TLc"/>
                                                         <constraint firstItem="xBo-xY-ihX" firstAttribute="leading" secondItem="kMP-nD-KWU" secondAttribute="leadingMargin" id="KEb-A8-lWj"/>
                                                         <constraint firstAttribute="trailingMargin" secondItem="xBo-xY-ihX" secondAttribute="trailing" id="i66-Ez-j5c"/>
                                                         <constraint firstItem="xBo-xY-ihX" firstAttribute="top" secondItem="kMP-nD-KWU" secondAttribute="topMargin" id="tmk-Tt-G6Y"/>
@@ -392,12 +395,15 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KDR-Pe-wZs">
                                                             <rect key="frame" x="15" y="11" width="620" height="210"/>
                                                             <subviews>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="XUq-uR-ife">
+                                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XUq-uR-ife">
                                                                     <rect key="frame" x="8" y="8" width="604" height="194"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SP2-QL-yFk">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="284" height="194"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="304" height="194"/>
                                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="5md-8y-i2s"/>
+                                                                            </constraints>
                                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                                                             <color key="textColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>

@@ -22,6 +22,7 @@ class ChambersScene: SKScene,SceneNavigator {
         let tempView = Bundle.main.loadNibNamed("Chambers", owner: self, options: nil)?.first as? Chambers
         if let tempView = tempView {
             tempView.sceneNavigator = self
+            
             view.addSubview(tempView)
             view.bringSubview(toFront: tempView)
         }

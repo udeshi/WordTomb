@@ -65,13 +65,13 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
             let cell = tableView.dequeueReusableCell(withIdentifier: "evenDashboardCellView") as! DashboardCustomTableViewCell
             cell.evenCategoryImage.image = UIImage(named: categories[indexPath.row].image!)
             cell.evenCategoryName.text = categories[indexPath.row].name
-            cell.backgroundColor = UIColor.clear
+        cell.backgroundColor = UIColor.black.withAlphaComponent(0.4)
             cell.evenCategoryImage.image?.resizableImage(withCapInsets: UIEdgeInsets(top:0,left:0,bottom:0,right:0), resizingMode: .stretch)
             return cell
         }else{
         let cell = tableView.dequeueReusableCell(withIdentifier: "oddDashboardCellView") as! DashboardCustomTableViewCell
         cell.oddCategoryImage.image = UIImage(named: categories[indexPath.row].image!)
-              cell.backgroundColor = UIColor.clear
+        cell.backgroundColor = UIColor.black.withAlphaComponent(0.4)
         cell.oddCategoryImage.image?.resizableImage(withCapInsets: UIEdgeInsets(top:0,left:0,bottom:0,right:0), resizingMode: .stretch)
         cell.oddCategoryName.text = categories[indexPath.row].name
         return cell
@@ -85,7 +85,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         let reveal = SKTransition.flipHorizontal(withDuration: 1.0)
         
        // let skView = self.chambers as! SKView
-        let chambersScreen = ChambersScene(size: CGSize(width:self.view.frame.width, height: self.view.frame.height))
+        let chambersScreen = ChambersScene(size: CGSize(width:currentView.frame.width, height: self.view.frame.height))
         
         chambersScreen.scaleMode  = .aspectFill
         chambersScreen.size = self.view.frame.size
