@@ -31,18 +31,44 @@ class  CoreDataHandler: NSObject {
             return 0
         }
     }
-    private class func saveCategories (dictionary: AnyObject) -> NSManagedObject? {
+    private class func createCategories (dictionary: AnyObject) -> NSManagedObject? {
              let context = getContext()
-        if let category = NSEntityDescription.insertNewObject(forEntityName: "Category", into: context) as? Category{
+        if let category = NSEntityDescription.insertNewObject(forEntityName: "Category", into: context) as? Category {
             print(dictionary)
             category.id = (dictionary["id"] as? Int32)!
             category.name = dictionary["name"] as? String
             category.image = dictionary["imageName"] as? String
-            category.questions = dictionary["questions"] as? NSSet
+            category.questions = getQuestionsFor(questionsDictionaries: dictionary["questions"] as? Array, usingManagedObjectContext: context)
             return category
         }
         return nil
     }
+    
+    private class func getQuestionsFor(questionsDictionaries: Array<AnyObject>? , usingManagedObjectContext context : NSManagedObjectContext) -> NSSet? {
+        
+        guard let questionsDictionaries = questionsDictionaries else {
+            return nil
+        }
+        
+        var questions : [Question] = []
+        
+        for question in questionsDictionaries {
+            let q = Question(context: context)
+            
+            if let id = question["id"] as? Int32, let level = question["level"] as? Int32, let noc = question["noOfCoins"] as? Int32 {
+                q.id = id
+                q.clue = question["clue"] as? String
+                q.answer = question["answer"] as? String
+                q.level = level
+                q.noOfCoins = noc
+            }
+            questions.append(q)
+        }
+        
+        return NSSet(array: questions)
+    }
+    
+    
     class func initializeGameDetails (){
          let context = getContext()
         let results = JSonHandler().loadJSon(filename: "Category")
@@ -50,8 +76,9 @@ class  CoreDataHandler: NSObject {
         print(categories)
         for cat in categories{
             print(cat)
+            createCategories(dictionary: cat)
         }
-        _ =  categories.map{saveCategories(dictionary: $0)}
+        //_ =  categories.map{saveCategories(dictionary: $0)}
         
         do{
             try context.save()

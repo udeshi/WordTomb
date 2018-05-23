@@ -13,12 +13,16 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var managedObjectContext : NSManagedObjectContext!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         print("Document dic" , FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last ?? "Not found")
+        
+        // init mangedObjectContext
+        managedObjectContext = persistentContainer.viewContext
+        
         return true
     }
 
