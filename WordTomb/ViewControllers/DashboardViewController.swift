@@ -88,7 +88,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         let chambersScreen = ChambersScene(size: CGSize(width:currentView.frame.width, height: self.view.frame.height))
         
         chambersScreen.scaleMode  = .aspectFill
-        chambersScreen.size = self.view.frame.size
+        chambersScreen.size = currentView.bounds.size
         currentView.presentScene(chambersScreen, transition: reveal)
        
     }

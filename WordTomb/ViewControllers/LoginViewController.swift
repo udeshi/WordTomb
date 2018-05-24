@@ -30,6 +30,7 @@ class LoginViewController: UIViewController {
         if (!isInitialized){
             CoreDataHandler.initializeGameDetails()
             UserDefaultsHandler().save(data: true, key: "isInitialized")
+            
         }
     }
 
