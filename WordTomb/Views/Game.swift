@@ -20,10 +20,12 @@ class Game: UIView {
     @IBOutlet weak var gridContainerView: UIView!
     
     var gameQuestions=[Question]()
-    var randomIndexes=[Int]()
+    var uniqueLetters = Set<Character>()
+    var randomIndexes=[[String:Any]]()
     let TILE_WIDTH : CGFloat = 100
     let TILE_HEIGHT : CGFloat = 100
-    
+    let MAX_GRID_TILES = 10
+    var gridMap = [[Int]]()
     let tempDataAray = [[0,1,1,1,0],[1,1,1,0,0],[0,0,0,1,0],[1,0,1,0,1],[0,1,0,1,0]]
     var viewArray : [[UIView]] = []
     
@@ -38,8 +40,9 @@ class Game: UIView {
     func initiliaze(){
         var questions = CoreDataHandler.fetchQuestions(level: 1)
         let randomIndex = Common().getRandomNumber(arrayCount: questions.count)
-     
-        gameQuestions.append(questions[randomIndex])
+        let question = questions[randomIndex]
+        randomIndexes.append(["index" : 0, "letter" : Array(question.answer!)[0]])
+        gameQuestions.append(question)
         questions.remove(at: Int(randomIndex))
         getOtherQuestions(questions: questions, comparedWith: 0)
     }
@@ -47,30 +50,85 @@ class Game: UIView {
     private func getOtherQuestions(questions: [Question], comparedWith: Int){
         var questionCopy = questions
         let letters = Array((gameQuestions[comparedWith]).answer!)
+        insertToArray(letters: letters)
         var randomIndex = Common().getRandomNumber(arrayCount: (letters.count))
+        var matchedLetter = letters[randomIndex]
         let compatibleQuestions = questions.filter{
             ($0.answer?.contains(where: {$0==letters[randomIndex]}))!
         }
         if(compatibleQuestions.count>0){
-            randomIndexes.append(randomIndex)
             randomIndex = Common().getRandomNumber(arrayCount: compatibleQuestions.count)
-            gameQuestions.append(compatibleQuestions[randomIndex])
-            questionCopy.remove(at: randomIndex)
-            print(gameQuestions)
+            let question = getCompatibleQuestions(compatibleQuestions: compatibleQuestions, randomIndex: randomIndex, matchedLetter:matchedLetter)
+            if(question != nil){
+                gameQuestions.append(question!)
+                questionCopy.remove(at: randomIndex)
+                print(gameQuestions)
+            }
+           
         }
         if(questionCopy.count>0){
             getOtherQuestions(questions: questionCopy, comparedWith: gameQuestions.count - 1)
         }
     }
     
+    fileprivate func getCompatibleQuestions(compatibleQuestions: [Question],randomIndex: Int, matchedLetter: Character) -> Question? {
+        let question = compatibleQuestions[randomIndex]
+        if(randomIndexes.count-1 > 0 && MAX_GRID_TILES > Array(question.answer!).count + (randomIndexes[randomIndexes.count-1]["index"] as! Int)){
+                randomIndexes.append(["index" : randomIndex, "letter" : matchedLetter])
+                return question
+        }
+        else if( randomIndexes.count-1 == 0 && MAX_GRID_TILES > Array(question.answer!).count + 0){
+            randomIndexes.append(["index" : randomIndex, "letter" : matchedLetter])
+            return question
+        }
+        else{
+            var compatibleQuestionsCopy = compatibleQuestions
+            compatibleQuestionsCopy.remove(at: randomIndex)
+            let randIndex = Common().getRandomNumber(arrayCount: compatibleQuestions.count)
+            if(compatibleQuestionsCopy.count>0){
+                return getCompatibleQuestions(compatibleQuestions: compatibleQuestionsCopy, randomIndex: randIndex, matchedLetter: matchedLetter)
+            }else{
+                return nil
+            }
+        }
+    }
+    
     fileprivate func creatGridArray(){
-        let maxGridLength = gameQuestions.max { ($0.answer!.count < $1.answer!.count)}
-        print(maxGridLength!)
+        gridMap = Array(repeating: Array(repeating:0, count: MAX_GRID_TILES),count:MAX_GRID_TILES)
+        for questionIndex in 0...gameQuestions.count{
+            let randIndex = randomIndexes[questionIndex]["index"] as! Int
+            var startingIndex = 0
+            if(questionIndex-1>0){
+                // get starting index
+                var previousIndex =  randomIndexes[questionIndex]
+                let matchedLetter = previousIndex["letter"] as! Character
+                let index = Array(gameQuestions[questionIndex].answer!).index(of:matchedLetter)
+                let parentIndex = randomIndexes[questionIndex-2]["index"] as! Int>0 ?randomIndexes[questionIndex-2]["index"] as! Int : 0
+                        startingIndex = parentIndex - index!
+                
+            }
+            if(questionIndex%2==0){
+                for x in startingIndex...Array(gameQuestions[questionIndex].answer!).count{
+                    //gridMap[questionIndex].insert(1, at: x)
+                    gridMap[randIndex].insert(1, at: x)
+                }
+                
+            }else{
+                for i in startingIndex...MAX_GRID_TILES{
+                    for x in 0...Array(gameQuestions[questionIndex].answer!).count{
+                        gridMap[i].insert(1, at: x)
+                    }
+                }
+            }
+        }
+        print(gridMap)
         
-//        for(var i=0; i<maxGridLength;i++){
-//
-//        }
-        
+    }
+    
+    fileprivate func insertToArray(letters: [Character]){
+        for i in 1...letters.count{
+            uniqueLetters.insert(letters[i])
+        }
     }
     
     fileprivate func loadTilesToGrid() {
@@ -98,7 +156,7 @@ class Game: UIView {
     }
     
     fileprivate func createViewArray() {
-        for r in tempDataAray {
+        for r in gridMap {
             var tiles : [UIView] = []
             for c in r {
                 let tile = getTile(forNumber: c)
