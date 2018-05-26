@@ -27,42 +27,28 @@
                                 <constraint firstAttribute="width" constant="150" id="vZB-WS-QqJ"/>
                             </constraints>
                         </tableView>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xDS-Se-qDh">
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jci-Yg-oS0">
                             <rect key="frame" x="160" y="0.0" width="487" height="843"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jci-Yg-oS0">
-                                    <rect key="frame" x="8" y="8" width="471" height="827"/>
-                                    <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OxK-OU-PML">
-                                            <rect key="frame" x="0.0" y="0.0" width="471" height="527"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="527" id="T6S-wA-NAA"/>
-                                            </constraints>
-                                        </view>
-                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h86-EF-Rud">
-                                            <rect key="frame" x="0.0" y="527" width="471" height="300"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="300" id="Vf6-ia-gvl"/>
-                                            </constraints>
-                                        </tableView>
-                                    </subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OxK-OU-PML">
+                                    <rect key="frame" x="0.0" y="0.0" width="487" height="543"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h86-EF-Rud">
+                                    <rect key="frame" x="0.0" y="543" width="487" height="300"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstItem="h86-EF-Rud" firstAttribute="bottom" secondItem="jci-Yg-oS0" secondAttribute="bottomMargin" id="EUk-Bn-zNI"/>
-                                        <constraint firstItem="h86-EF-Rud" firstAttribute="trailing" secondItem="jci-Yg-oS0" secondAttribute="trailingMargin" id="UnR-Ni-6cN"/>
-                                        <constraint firstItem="h86-EF-Rud" firstAttribute="leading" secondItem="jci-Yg-oS0" secondAttribute="leadingMargin" id="jLM-iV-cNB"/>
-                                        <constraint firstItem="h86-EF-Rud" firstAttribute="top" secondItem="OxK-OU-PML" secondAttribute="bottom" id="niO-uu-GAM"/>
+                                        <constraint firstAttribute="height" constant="300" id="vHe-GB-f3u"/>
                                     </constraints>
-                                </stackView>
+                                </tableView>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="jci-Yg-oS0" firstAttribute="leading" secondItem="xDS-Se-qDh" secondAttribute="leadingMargin" id="3Bl-zW-2hq"/>
-                                <constraint firstItem="jci-Yg-oS0" firstAttribute="top" secondItem="xDS-Se-qDh" secondAttribute="topMargin" id="Jm4-b8-Pqe"/>
-                                <constraint firstAttribute="trailingMargin" secondItem="jci-Yg-oS0" secondAttribute="trailing" id="V4o-wN-Xw6"/>
+                                <constraint firstItem="h86-EF-Rud" firstAttribute="bottom" secondItem="jci-Yg-oS0" secondAttribute="bottomMargin" id="EUk-Bn-zNI"/>
+                                <constraint firstItem="h86-EF-Rud" firstAttribute="trailing" secondItem="jci-Yg-oS0" secondAttribute="trailingMargin" id="UnR-Ni-6cN"/>
+                                <constraint firstItem="h86-EF-Rud" firstAttribute="leading" secondItem="jci-Yg-oS0" secondAttribute="leadingMargin" id="jLM-iV-cNB"/>
+                                <constraint firstItem="h86-EF-Rud" firstAttribute="top" secondItem="OxK-OU-PML" secondAttribute="bottom" id="niO-uu-GAM"/>
                             </constraints>
-                        </view>
+                        </stackView>
                     </subviews>
                     <constraints>
                         <constraint firstItem="85a-Zr-oxD" firstAttribute="leading" secondItem="YKF-qC-Xf6" secondAttribute="leadingMargin" id="CUP-k7-ZdE"/>

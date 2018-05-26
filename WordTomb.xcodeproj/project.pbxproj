@@ -19,7 +19,6 @@
 		0D63CC6D20A0644A00A4DE2A /* UserDefaultsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D63CC6C20A0644A00A4DE2A /* UserDefaultsHandler.swift */; };
 		0D6552A2209EC663008146B5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6552A1209EC663008146B5 /* LoginViewController.swift */; };
 		0D6552A5209ECE4F008146B5 /* authScreenBackgroundImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0D6552A4209ECE4F008146B5 /* authScreenBackgroundImage.jpg */; };
-		0D6A825920A7267B002F2BBB /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6A825820A7267B002F2BBB /* Category.swift */; };
 		0D6A829420A7388E002F2BBB /* Category.json in Resources */ = {isa = PBXBuildFile; fileRef = 0D6A829320A7388E002F2BBB /* Category.json */; };
 		0D6D8A8D20A6F09800E55218 /* Signup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D6D8A8C20A6F09800E55218 /* Signup.xib */; };
 		0D6DD07B20A2782E00E8ACDD /* Signup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6DD07A20A2782E00E8ACDD /* Signup.swift */; };
@@ -30,6 +29,9 @@
 		0D7E7679209F4A30003E6958 /* HamburgerMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D7E7678209F4A30003E6958 /* HamburgerMenu.xib */; };
 		0D7E767B209F4A59003E6958 /* HamburgerMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7E767A209F4A59003E6958 /* HamburgerMenu.swift */; };
 		0D8432C720B1321000870EEC /* ChambersScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8432C620B1321000870EEC /* ChambersScene.swift */; };
+		0D872B5120B9A6D700A003FB /* SettingsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D872B5020B9A6D700A003FB /* SettingsScene.swift */; };
+		0D872B5320B9AA6700A003FB /* Settings.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D872B5220B9AA6700A003FB /* Settings.xib */; };
+		0D872B5520B9AAD900A003FB /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D872B5420B9AAD900A003FB /* Settings.swift */; };
 		0DA0D0A420ABA3800014EC9E /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA0D0A320ABA3800014EC9E /* UIButtonExtension.swift */; };
 		0DA0D0A720ABAF980014EC9E /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA0D0A620ABAF980014EC9E /* MenuViewController.swift */; };
 		0DAF221720A7BE5D001A9F98 /* JSonHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAF221620A7BE5D001A9F98 /* JSonHandler.swift */; };
@@ -75,7 +77,6 @@
 		0D63CC6C20A0644A00A4DE2A /* UserDefaultsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHandler.swift; sourceTree = "<group>"; };
 		0D6552A1209EC663008146B5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0D6552A4209ECE4F008146B5 /* authScreenBackgroundImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = authScreenBackgroundImage.jpg; sourceTree = "<group>"; };
-		0D6A825820A7267B002F2BBB /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		0D6A829320A7388E002F2BBB /* Category.json */ = {isa = PBXFileReference; explicitFileType = text.json; fileEncoding = 4; path = Category.json; sourceTree = "<group>"; };
 		0D6D8A8C20A6F09800E55218 /* Signup.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Signup.xib; sourceTree = "<group>"; };
 		0D6DD07A20A2782E00E8ACDD /* Signup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signup.swift; sourceTree = "<group>"; };
@@ -86,6 +87,9 @@
 		0D7E7678209F4A30003E6958 /* HamburgerMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HamburgerMenu.xib; sourceTree = "<group>"; };
 		0D7E767A209F4A59003E6958 /* HamburgerMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerMenu.swift; sourceTree = "<group>"; };
 		0D8432C620B1321000870EEC /* ChambersScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChambersScene.swift; sourceTree = "<group>"; };
+		0D872B5020B9A6D700A003FB /* SettingsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScene.swift; sourceTree = "<group>"; };
+		0D872B5220B9AA6700A003FB /* Settings.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Settings.xib; sourceTree = "<group>"; };
+		0D872B5420B9AAD900A003FB /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		0DA0D0A320ABA3800014EC9E /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		0DA0D0A620ABAF980014EC9E /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		0DAF221620A7BE5D001A9F98 /* JSonHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSonHandler.swift; sourceTree = "<group>"; };
@@ -173,6 +177,7 @@
 				0D7E7673209F3D89003E6958 /* DashboardScene.swift */,
 				0DAF222220A868BA001A9F98 /* GameViewScene.swift */,
 				0D8432C620B1321000870EEC /* ChambersScene.swift */,
+				0D872B5020B9A6D700A003FB /* SettingsScene.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -215,7 +220,6 @@
 		0D6A825720A7264D002F2BBB /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				0D6A825820A7267B002F2BBB /* Category.swift */,
 				0D6A829320A7388E002F2BBB /* Category.json */,
 			);
 			path = Data;
@@ -233,6 +237,8 @@
 				0DAF222020A85F5E001A9F98 /* Chambers.swift */,
 				0DAF222420A868E8001A9F98 /* Game.swift */,
 				0DAF222620A868FE001A9F98 /* Game.xib */,
+				0D872B5220B9AA6700A003FB /* Settings.xib */,
+				0D872B5420B9AAD900A003FB /* Settings.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -332,6 +338,7 @@
 				0D317F7B209EBBF60004E560 /* Assets.xcassets in Resources */,
 				0D317F7E209EBBF60004E560 /* LaunchScreen.storyboard in Resources */,
 				0D317F72209EBBF60004E560 /* Actions.sks in Resources */,
+				0D872B5320B9AA6700A003FB /* Settings.xib in Resources */,
 				0DAF222720A868FE001A9F98 /* Game.xib in Resources */,
 				0DAF221D20A853F1001A9F98 /* Chambers.xib in Resources */,
 				0D7E7679209F4A30003E6958 /* HamburgerMenu.xib in Resources */,
@@ -365,9 +372,10 @@
 				0D6552A2209EC663008146B5 /* LoginViewController.swift in Sources */,
 				0DA0D0A720ABAF980014EC9E /* MenuViewController.swift in Sources */,
 				461E543920AD3AB1006659EF /* User+CoreDataClass.swift in Sources */,
+				0D872B5520B9AAD900A003FB /* Settings.swift in Sources */,
 				0DA0D0A420ABA3800014EC9E /* UIButtonExtension.swift in Sources */,
+				0D872B5120B9A6D700A003FB /* SettingsScene.swift in Sources */,
 				461E542F20AD3AB1006659EF /* Level_Category+CoreDataClass.swift in Sources */,
-				0D6A825920A7267B002F2BBB /* Category.swift in Sources */,
 				0D317F74209EBBF60004E560 /* GameScene.swift in Sources */,
 				461E543520AD3AB1006659EF /* Level+CoreDataClass.swift in Sources */,
 				0DAF222120A85F5E001A9F98 /* Chambers.swift in Sources */,

@@ -35,7 +35,7 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func getStartedBtnClicked(_ sender: UIButton) {
-        if(email.text != ""){
+        if(email.text != "" && password.text != ""){
             let user = CoreDataHandler.fetchUserDetails(email:email.text! )
             if(( user ) != nil){
                 print("saved user" + (user?.password)!)

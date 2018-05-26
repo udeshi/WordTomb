@@ -85,12 +85,11 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         let reveal = SKTransition.flipHorizontal(withDuration: 1.0)
         
        // let skView = self.chambers as! SKView
-        let chambersScreen = ChambersScene(size: CGSize(width:currentView.frame.width, height: self.view.frame.height))
+        let chambersScreen = ChambersScene(size: CGSize(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
         
         chambersScreen.scaleMode  = .aspectFill
-        chambersScreen.size = currentView.bounds.size
+        chambersScreen.size = self.view.frame.size
         currentView.presentScene(chambersScreen, transition: reveal)
-       
     }
 
 }

@@ -15,7 +15,7 @@ class SignupViewController: UIViewController {
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
-    
+     var sceneNavigator : SceneNavigator?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +29,9 @@ class SignupViewController: UIViewController {
 
     @IBAction func signupBtnClicked(_ sender: Any) {
         if (CoreDataHandler.saveUserDetails(userName: "user1", email: "user@123", password: "123456")){
-            print("added")
+            UserDefaultsHandler().save(data: userName.text,key: "Session")
+            
+            sceneNavigator?.navigateToScene(screenName: "Dashboard")
         }else{
             print("error")
         }
