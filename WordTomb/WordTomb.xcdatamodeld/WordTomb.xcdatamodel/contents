@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Category" representedClassName="Category" syncable="YES">
-        <attribute name="id" optional="YES" attributeType="Integer 32" minValueString="1" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" minValueString="1" defaultValueString="1" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="String" storedInTruthFile="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="has" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User_Category" inverseName="has" inverseEntity="User_Category" syncable="YES"/>
@@ -14,9 +14,9 @@
         </uniquenessConstraints>
     </entity>
     <entity name="Hint" representedClassName="Hint" syncable="YES">
-        <attribute name="category_hintId" optional="YES" attributeType="String" valueTransformerName="id" customClassName="Category" syncable="YES"/>
         <attribute name="hint" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="questionId" optional="YES" attributeType="Integer 32" valueTransformerName="id" defaultValueString="0" usesScalarValueType="YES" customClassName="Category" syncable="YES"/>
         <relationship name="question" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Question" inverseName="hints" inverseEntity="Question" syncable="YES"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
@@ -49,6 +49,7 @@
     </entity>
     <entity name="Question" representedClassName="Question" syncable="YES">
         <attribute name="answer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="categoryId" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="clue" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="level" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -92,7 +93,7 @@
         <element name="Hint" positionX="430" positionY="198" width="128" height="105"/>
         <element name="Level" positionX="-173" positionY="518" width="128" height="105"/>
         <element name="Level_Category" positionX="-83" positionY="170" width="128" height="120"/>
-        <element name="Question" positionX="196" positionY="144" width="128" height="165"/>
+        <element name="Question" positionX="196" positionY="144" width="128" height="180"/>
         <element name="User" positionX="-380" positionY="-243" width="128" height="135"/>
         <element name="User_Category" positionX="-414" positionY="36" width="128" height="120"/>
     </elements>

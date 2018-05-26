@@ -44,6 +44,29 @@ class  CoreDataHandler: NSObject {
         return nil
     }
     
+    private class func getHintsFor (hintsDictionaries: Array<AnyObject>? , usingManagedObjectContext context : NSManagedObjectContext) -> NSSet? {
+        
+        guard let hintsDictionaries = hintsDictionaries else {
+            return nil
+        }
+        
+        var hints : [Hint] = []
+        
+        for hint in hintsDictionaries {
+            let h = Hint(context: context)
+            
+            if let id = hint["id"] as? Int32, let questionId = hint["questionId"] as? Int32{
+                h.id = id
+                h.hint = hint["hint"] as? String
+                h.questionId = questionId
+            }
+            hints.append(h)
+        }
+        
+        return NSSet(array: hints)
+    }
+    
+    
     private class func getQuestionsFor(questionsDictionaries: Array<AnyObject>? , usingManagedObjectContext context : NSManagedObjectContext) -> NSSet? {
         
         guard let questionsDictionaries = questionsDictionaries else {
@@ -61,6 +84,8 @@ class  CoreDataHandler: NSObject {
                 q.answer = question["answer"] as? String
                 q.level = level
                 q.noOfCoins = noc
+                q.categoryId = (question["categoryId"] as? Int32)!
+                q.hints = getHintsFor(hintsDictionaries: question["hints"] as? Array, usingManagedObjectContext: context)
             }
             questions.append(q)
         }
@@ -122,7 +147,6 @@ class  CoreDataHandler: NSObject {
         
         do{
             user = try context.fetch(request)[0]
-            print(user)
             return user
         }
         catch{
@@ -144,12 +168,12 @@ class  CoreDataHandler: NSObject {
         }
     }
     
-    class func fetchQuestions (level: Int32)->[Question]{
+    class func fetchQuestions (level: Int, type: Int)->[Question]{
         let context = getContext()
         let request: NSFetchRequest<Question> = Question.fetchRequest()
         var questions: [Question] = []
-       // let predicate = NSPredicate(format: "level == %d", level)
-       // request.predicate = predicate
+       let predicate = NSPredicate(format: "categoryId == %d AND level == %d", type, level)
+       request.predicate = predicate
         do{
             questions = try context.fetch(request)
             print(questions.count)

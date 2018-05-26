@@ -20,13 +20,14 @@ class Game: UIView {
     @IBOutlet weak var gridContainerView: UIView!
     
     var gameQuestions=[Question]()
+    var sugesstions=[Question]()
     var uniqueLetters = Set<Character>()
     var randomIndexes=[[String:Any]]()
-    let TILE_WIDTH : CGFloat = 100
-    let TILE_HEIGHT : CGFloat = 100
+    let TILE_WIDTH : CGFloat = 70
+    let TILE_HEIGHT : CGFloat = 70
     let MAX_GRID_TILES = 10
     var gridMap = [[Int]]()
-    let tempDataAray = [[0,1,1,1,0],[1,1,1,0,0],[0,0,0,1,0],[1,0,1,0,1],[0,1,0,1,0]]
+    let tempDataAray = [[0,1,1,1,0,0,1,1,1,0],[1,1,1,0,0,0,1,1,1,0],[0,0,0,1,0,0,1,1,1,0],[1,0,1,0,1,0,1,1,1,0],[0,1,0,1,0,0,1,1,1,0]]
     var viewArray : [[UIView]] = []
     
     override func awakeFromNib() {
@@ -38,64 +39,92 @@ class Game: UIView {
     }
     
     func initiliaze(){
-        var questions = CoreDataHandler.fetchQuestions(level: 1)
-        let randomIndex = Common().getRandomNumber(arrayCount: questions.count)
-        let question = questions[randomIndex]
+        let categoryType = UserDefaultsHandler().getData(key: "selectedCategoryId")
+        sugesstions = CoreDataHandler.fetchQuestions(level: 1, type: Int(categoryType)!)
+        let randomIndex = Common().getRandomNumber(arrayCount: sugesstions.count)
+        let question = sugesstions[randomIndex]
+             print(question.answer)
         randomIndexes.append(["index" : 0, "letter" : Array(question.answer!)[0]])
         gameQuestions.append(question)
-        questions.remove(at: Int(randomIndex))
-        getOtherQuestions(questions: questions, comparedWith: 0)
+        sugesstions.remove(at: Int(randomIndex))
+        getOtherQuestions(comparedWith: 0)
     }
     
-    private func getOtherQuestions(questions: [Question], comparedWith: Int){
-        var questionCopy = questions
-        let letters = Array((gameQuestions[comparedWith]).answer!)
+    private func getOtherQuestions(comparedWith: Int){
+        var letters = Array((gameQuestions[comparedWith]).answer!)
+        print("letters bef ", letters)
+        let PreviousMatch = randomIndexes.last!["letter"] as! Character
+       letters = letters.filter{$0 != PreviousMatch}
+          print("letters af ", letters)
         insertToArray(letters: letters)
-        var randomIndex = Common().getRandomNumber(arrayCount: (letters.count))
-        var matchedLetter = letters[randomIndex]
-        let compatibleQuestions = questions.filter{
-            ($0.answer?.contains(where: {$0==letters[randomIndex]}))!
-        }
-        if(compatibleQuestions.count>0){
-            randomIndex = Common().getRandomNumber(arrayCount: compatibleQuestions.count)
-            let question = getCompatibleQuestions(compatibleQuestions: compatibleQuestions, randomIndex: randomIndex, matchedLetter:matchedLetter)
-            if(question != nil){
-                gameQuestions.append(question!)
-                questionCopy.remove(at: randomIndex)
-                print(gameQuestions)
+        var unLetters = Set<Character>()
+        unLetters = unLetters.union(letters)
+        let currentQuestionSize = gameQuestions.count
+        for i in unLetters.indices{
+            let matchedLetter = unLetters[i]
+            print ("letter : ....." , unLetters[i])
+            let compatibleQuestions = sugesstions.filter{
+                ($0.answer?.contains(where: {$0==unLetters[i]}))!
             }
-           
+            if(compatibleQuestions.count>0){
+                print("all com" , compatibleQuestions.count)
+                let randomIndex = compatibleQuestions.count - 1 <= 0 ? 0 : Common().getRandomNumber(arrayCount: compatibleQuestions.count)
+                getCompatibleQuestions(compatibleQuestions: compatibleQuestions, randomIndex: randomIndex, matchedLetter:matchedLetter)
+                print ("new count : " , gameQuestions.count)
+                if (currentQuestionSize + 1 == gameQuestions.count){
+                    break;
+                }
+            }
         }
-        if(questionCopy.count>0){
-            getOtherQuestions(questions: questionCopy, comparedWith: gameQuestions.count - 1)
+        if(sugesstions.count>0 && gameQuestions.count < 5 && currentQuestionSize + 1 == gameQuestions.count){
+            getOtherQuestions(comparedWith: gameQuestions.count - 1)
         }
     }
     
-    fileprivate func getCompatibleQuestions(compatibleQuestions: [Question],randomIndex: Int, matchedLetter: Character) -> Question? {
+    fileprivate func getCompatibleQuestions(compatibleQuestions: [Question],randomIndex: Int, matchedLetter: Character){
         let question = compatibleQuestions[randomIndex]
-        if(randomIndexes.count-1 > 0 && MAX_GRID_TILES > Array(question.answer!).count + (randomIndexes[randomIndexes.count-1]["index"] as! Int)){
-                randomIndexes.append(["index" : randomIndex, "letter" : matchedLetter])
-                return question
+        var startingIndex=0
+        let index = Array(question.answer!).index(of:matchedLetter)
+        if(randomIndexes.count-1>0){
+        // get starting index
+        var previousIndex =  randomIndexes.last
+        //let preMatchedLetter = previousIndex!["letter"] as! Character
+     
+        let parentIndex = randomIndexes[randomIndexes.count-1]["index"] as! Int>0 ?randomIndexes[randomIndexes.count-1]["index"] as! Int : 0
+            startingIndex = parentIndex - index!
+        }else{
+            let previousLettersLength = index! - 0
+            print("previousLettersLength", previousLettersLength)
+            randomIndexes[randomIndexes.count - 1]["index"] = previousLettersLength
+            
         }
-        else if( randomIndexes.count-1 == 0 && MAX_GRID_TILES > Array(question.answer!).count + 0){
-            randomIndexes.append(["index" : randomIndex, "letter" : matchedLetter])
-            return question
+        
+        if(MAX_GRID_TILES >= Array(question.answer!).count + startingIndex && startingIndex >= 0){
+                randomIndexes.append(["index" : randomIndex, "letter" : matchedLetter])
+            print(question.answer)
+                gameQuestions.append(question)
+            print("sugg before", sugesstions.count)
+            sugesstions = sugesstions.filter{$0.id != question.id}
+            print("sugg after", sugesstions.count)
         }
         else{
             var compatibleQuestionsCopy = compatibleQuestions
-            compatibleQuestionsCopy.remove(at: randomIndex)
-            let randIndex = Common().getRandomNumber(arrayCount: compatibleQuestions.count)
-            if(compatibleQuestionsCopy.count>0){
-                return getCompatibleQuestions(compatibleQuestions: compatibleQuestionsCopy, randomIndex: randIndex, matchedLetter: matchedLetter)
-            }else{
-                return nil
+                print("compatibleQuestionsCopy before", compatibleQuestionsCopy.count)
+             compatibleQuestionsCopy = compatibleQuestionsCopy.filter{$0.id != question.id}
+    print("compatibleQuestionsCopy aft", compatibleQuestionsCopy.count)
+            if(compatibleQuestionsCopy.count>0 ){
+                let randIndex = compatibleQuestionsCopy.count - 1 <= 0 ? 0 : Common().getRandomNumber(arrayCount: compatibleQuestionsCopy.count)
+                print("mmmmmmmmmm")
+                getCompatibleQuestions(compatibleQuestions: compatibleQuestionsCopy, randomIndex: randIndex, matchedLetter: matchedLetter)
             }
         }
     }
     
     fileprivate func creatGridArray(){
+        let maxGridVal = gameQuestions.max{($0.answer!.count < $1.answer!.count)}
+        _ = (maxGridVal?.answer?.count)! + 1
         gridMap = Array(repeating: Array(repeating:0, count: MAX_GRID_TILES),count:MAX_GRID_TILES)
-        for questionIndex in 0...gameQuestions.count{
+        for questionIndex in 0...gameQuestions.count-1{
             let randIndex = randomIndexes[questionIndex]["index"] as! Int
             var startingIndex = 0
             if(questionIndex-1>0){
@@ -107,28 +136,38 @@ class Game: UIView {
                         startingIndex = parentIndex - index!
                 
             }
+            print(gameQuestions[questionIndex].answer!)
             if(questionIndex%2==0){
-                for x in startingIndex...Array(gameQuestions[questionIndex].answer!).count{
+                    print("even",gameQuestions[questionIndex].answer)
+                for x in startingIndex...Array(gameQuestions[questionIndex].answer!).count-1{
                     //gridMap[questionIndex].insert(1, at: x)
-                    gridMap[randIndex].insert(1, at: x)
+                    gridMap[randIndex][x] = 1
                 }
-                
+                print("=====================")
+                print(gridMap)
             }else{
-                for i in startingIndex...MAX_GRID_TILES{
-                    for x in 0...Array(gameQuestions[questionIndex].answer!).count{
-                        gridMap[i].insert(1, at: x)
-                    }
+                //startingIndex=startingIndex+1
+                print("odd",gameQuestions[questionIndex].answer!)
+                for i in startingIndex...Array(gameQuestions[questionIndex].answer!).count-1{
+                   // for x in 0...Array(gameQuestions[questionIndex].answer!).count-1{
+                        gridMap[i][startingIndex+1] = 1
+                   // }
+                    
                 }
+                print("=====================")
+                print(gridMap)
             }
         }
-        print(gridMap)
+   
         
     }
     
     fileprivate func insertToArray(letters: [Character]){
-        for i in 1...letters.count{
-            uniqueLetters.insert(letters[i])
-        }
+//        for i in 0...letters.count-1{
+//            uniqueLetters.insert(letters[i])
+           uniqueLetters = uniqueLetters.union(letters)
+        print(uniqueLetters)
+       // }
     }
     
     fileprivate func loadTilesToGrid() {

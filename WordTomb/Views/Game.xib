@@ -17,36 +17,73 @@
             <rect key="frame" x="0.0" y="0.0" width="667" height="863"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YKF-qC-Xf6">
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YKF-qC-Xf6">
                     <rect key="frame" x="0.0" y="20" width="647" height="843"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="byz-W9-V1q">
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="85a-Zr-oxD">
                             <rect key="frame" x="0.0" y="0.0" width="150" height="843"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="150" id="Sa6-fY-o1n"/>
+                                <constraint firstAttribute="width" constant="150" id="vZB-WS-QqJ"/>
+                            </constraints>
+                        </tableView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xDS-Se-qDh">
+                            <rect key="frame" x="160" y="0.0" width="487" height="843"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jci-Yg-oS0">
+                                    <rect key="frame" x="8" y="8" width="471" height="827"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OxK-OU-PML">
+                                            <rect key="frame" x="0.0" y="0.0" width="471" height="527"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="527" id="T6S-wA-NAA"/>
+                                            </constraints>
+                                        </view>
+                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h86-EF-Rud">
+                                            <rect key="frame" x="0.0" y="527" width="471" height="300"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="300" id="Vf6-ia-gvl"/>
+                                            </constraints>
+                                        </tableView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="h86-EF-Rud" firstAttribute="bottom" secondItem="jci-Yg-oS0" secondAttribute="bottomMargin" id="EUk-Bn-zNI"/>
+                                        <constraint firstItem="h86-EF-Rud" firstAttribute="trailing" secondItem="jci-Yg-oS0" secondAttribute="trailingMargin" id="UnR-Ni-6cN"/>
+                                        <constraint firstItem="h86-EF-Rud" firstAttribute="leading" secondItem="jci-Yg-oS0" secondAttribute="leadingMargin" id="jLM-iV-cNB"/>
+                                        <constraint firstItem="h86-EF-Rud" firstAttribute="top" secondItem="OxK-OU-PML" secondAttribute="bottom" id="niO-uu-GAM"/>
+                                    </constraints>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="jci-Yg-oS0" firstAttribute="leading" secondItem="xDS-Se-qDh" secondAttribute="leadingMargin" id="3Bl-zW-2hq"/>
+                                <constraint firstItem="jci-Yg-oS0" firstAttribute="top" secondItem="xDS-Se-qDh" secondAttribute="topMargin" id="Jm4-b8-Pqe"/>
+                                <constraint firstAttribute="trailingMargin" secondItem="jci-Yg-oS0" secondAttribute="trailing" id="V4o-wN-Xw6"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OxK-OU-PML">
-                            <rect key="frame" x="150" y="0.0" width="497" height="843"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </view>
                     </subviews>
+                    <constraints>
+                        <constraint firstItem="85a-Zr-oxD" firstAttribute="leading" secondItem="YKF-qC-Xf6" secondAttribute="leadingMargin" id="CUP-k7-ZdE"/>
+                        <constraint firstItem="85a-Zr-oxD" firstAttribute="top" secondItem="YKF-qC-Xf6" secondAttribute="topMargin" id="LFH-rd-xCJ"/>
+                        <constraint firstItem="85a-Zr-oxD" firstAttribute="bottom" secondItem="YKF-qC-Xf6" secondAttribute="bottomMargin" id="fdH-0V-7Iz"/>
+                    </constraints>
                 </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="YKF-qC-Xf6" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="3gd-Gs-9Gk"/>
                 <constraint firstAttribute="trailingMargin" secondItem="YKF-qC-Xf6" secondAttribute="trailing" id="CxI-Vc-D4O"/>
-                <constraint firstAttribute="bottomMargin" secondItem="YKF-qC-Xf6" secondAttribute="bottom" id="MIx-MH-Ewm"/>
-                <constraint firstItem="YKF-qC-Xf6" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="MR3-MV-7Cn"/>
                 <constraint firstItem="YKF-qC-Xf6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="eQt-O5-TUB"/>
+                <constraint firstItem="YKF-qC-Xf6" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="ubt-9O-t4I"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="gridContainerView" destination="OxK-OU-PML" id="yFb-n2-kkb"/>
             </connections>
-            <point key="canvasLocation" x="-108" y="31.5"/>
+            <point key="canvasLocation" x="-108.5" y="31.5"/>
         </view>
     </objects>
 </document>

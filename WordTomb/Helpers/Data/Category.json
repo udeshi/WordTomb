@@ -1,147 +1,434 @@
-
-{"results": [ {
-             "id": 1,
-             "name": "Animals",
-             "imageName": "animals",
-             "questions": [
-                           {
-                           "id": 1,
-                           "clue": "A wrinkled face dog that has a curly tail",
-                           "answer": "PUG",
-                           "level": 1,
-                           "noOfCoins": 40
-                           },
-                           {
-                           "id": 3,
-                           "clue": "This extinct bird was featured in Alice in Wonderland",
-                           "answer": "DODO",
-                           "level": 1,
-                           "noOfCoins": 60
-                           },
-                           {
-                           "id": 4,
-                           "clue": "This fish has a long jaw needle like teeth and is covered with hard scales",
-                           "answer": "GAR",
-                           "level": 1,
-                           "noOfCoins": 50
-                           },
-                           {
-                           "id": 12,
-                           "clue": "Small web-footed swimming bird",
-                           "answer": "DUCK",
-                           "level": 1,
-                           "noOfCoins": 40
-                           },
-                           {
-                           "id": 14,
-                           "clue": "A black bird that is considered one of the worlds smartest animals",
-                           "answer": "CROW",
-                           "level": 1,
-                           "noOfCoins": 20
-                           },
-                           {
-                           "id": 15,
-                           "clue": "A faithful animal that is a popular pet",
-                           "answer": "DOG",
-                           "level": 1,
-                           "noOfCoins": 30
-                           },
-                           {
-                           "id": 16,
-                           "clue": "This aquatic invertebrate is often called calamari when cooked",
-                           "answer": "SQUID",
-                           "level": 2,
-                           "noOfCoins": 30
-                           },
-                           {
-                           "id": 13,
-                           "clue": "A goat antelope with vertical horns hooked backwards near the tip",
-                           "answer": "CHAMOIS",
-                           "level": 2,
-                           "noOfCoins": 50
-                           },
-                           {
-                           "id": 2,
-                           "clue": "You wouldnt want to swim in the Amazon when these fish are around",
-                           "answer": "PIRANHA",
-                           "level": 2,
-                           "noOfCoins": 40
-                           },
-                           {
-                           "id": 5,
-                           "clue": "Large flightless bird that is closely related to the ostrich and emu",
-                           "answer": "RHEA",
-                           "level": 2,
-                           "noOfCoins": 60
-                           },
-                           {
-                           "id": 6,
-                           "clue": "Shares its name with a well loved character from the movie The Goonies",
-                           "answer": "SLOTH",
-                           "level": 2,
-                           "noOfCoins": 50
-                           },
-                           {
-                           "id": 7,
-                           "clue": "Shares its name with a well loved character from the movie The Goonies",
-                           "answer": "MOLLY",
-                           "level": 2,
-                           "noOfCoins": 40
-                           },
-                           {
-                           "id": 8,
-                           "clue": "A large flippered marine mammal with long tusks",
-                           "answer": "WALRUS",
-                           "level": 2,
-                           "noOfCoins": 60
-                           },
-                           {
-                           "id": 9,
-                           "clue": "Large flightless bird that is native to Australia",
-                           "answer": "EMU",
-                           "level": 2,
-                           "noOfCoins": 60
-                           },
-                           {
-                           "id": 10,
-                           "clue": "Insects related to butterflies",
-                           "answer": "MOTH",
-                           "level": 2,
-                           "noOfCoins": 30
-                           },
-                           {
-                           "id": 11,
-                           "clue": "This animal has the unfortunate myth of causing warts",
-                           "answer": "TOAD",
-                           "level": 2,
-                           "noOfCoins": 20
-                           }
-                           ]
-             }, {
-             "id": 2,
-             "name": "Sports",
-             "imageName": "sports"
-             },
-             {
-             "id": 3,
-             "name": "Technology",
-             "imageName": "technology"
-             },
-             {
-             "id": 4,
-             "name": "Music",
-             "imageName": "music"
-             },
-             {
-             "id": 5,
-             "name": "Movies",
-             "imageName": "movies"
-             },
-             {
-             "id": 6,
-             "name": "Underwater",
-             "imageName": "underwater"
-             }
-             ]
-}
-
+{"results":[
+  {
+  "id":1,
+  "name":"Animals",
+  "imageName":"animals",
+  "questions":[
+               {
+               "id":1,
+               "clue":"A wrinkled face dog that has a curly tail",
+               "answer":"PUG",
+               "level":1,
+               "noOfCoins":40,
+               "categoryId":1,
+               "hints":[
+                        {
+                        "id":1,
+                        "hint":"Flat-nosed dog breed",
+                        "questionId":1
+                        },
+                        {
+                        "id":2,
+                        "hint":"Dwarf breed of dog",
+                        "questionId":1
+                        }
+                        ]
+               },
+               {
+               "id":3,
+               "clue":"This extinct bird was featured in Alice in Wonderland",
+               "answer":"DODO",
+               "level":1,
+               "noOfCoins":60,
+               "categoryId":1,
+               "hints":[
+                        {
+                        "id":3,
+                        "hint":"Extinct columbiform bird",
+                        "questionId":3
+                        },
+                        {
+                        "id":4,
+                        "hint":"Flightless bird that was endemic to the island of Mauritius",
+                        "questionId":3
+                        },
+                        {
+                        "id":5,
+                        "hint":"Scientific name: Raphus cucullatus",
+                        "questionId":3
+                        }
+                        ]
+               },
+               {
+               "id":4,
+               "clue":"This fish has a long jaw needle like teeth and is covered with hard scales",
+               "answer":"GAR",
+               "level":1,
+               "noOfCoins":50,
+               "categoryId":1,
+               "hints":[
+                        {
+                        "id":6,
+                        "hint":"Alligatorsnouted fish",
+                        "questionId":4
+                        },
+                        {
+                        "id":7,
+                        "hint":"Fish found in Hungary",
+                        "questionId":4
+                        },
+                        {
+                        "id":8,
+                        "hint":"Lepisosteidae is the only extant family of ____",
+                        "questionId":4
+                        }
+                        ]
+               },
+               {
+               "id":12,
+               "clue":"Small web-footed swimming bird",
+               "answer":"DUCK",
+               "level":1,
+               "noOfCoins":40,
+               "categoryId":1,
+               "hints":[
+                        {
+                        "id":9,
+                        "hint":"The common name for a large number of species in the waterfowl family Anatidae",
+                        "questionId":12
+                        },
+                        {
+                        "id":10,
+                        "hint":"Farmyard bird that swims",
+                        "questionId":12
+                        },
+                        {
+                        "id":11,
+                        "hint":"Walt Disney character",
+                        "questionId":12
+                        }
+                        ]
+               },
+               {
+               "id":14,
+               "clue":"A black bird that is considered one of the worlds smartest animals",
+               "answer":"CROW",
+               "level":1,
+               "categoryId":1,
+               "noOfCoins":20,
+               "hints":[
+                        {
+                        "id":12,
+                        "hint":"Bird that's similar to a raven",
+                        "questionId":14
+                        },
+                        {
+                        "id":13,
+                        "hint":"Their nests are bulky structures built in trees or bushes",
+                        "questionId":14
+                        },
+                        {
+                        "id":14,
+                        "hint":"A large, black bird with a loud, unpleasant cry",
+                        "questionId":14
+                        }
+                        ]
+               },
+               {
+               "id":15,
+               "clue":"A faithful animal that is a popular pet",
+               "answer":"DOG",
+               "level":1,
+               "noOfCoins":30,
+               "categoryId":1,
+               "hints":[
+                        {
+                        "id":15,
+                        "hint":"A common animal with four legs, especially kept by people as a pet",
+                        "questionId":15
+                        },
+                        {
+                        "id":16,
+                        "hint":"Dalmatian or dachshund, for example",
+                        "questionId":15
+                        }
+                        ]
+               },
+               {
+               "id":16,
+               "clue":"This aquatic invertebrate is often called calamari when cooked",
+               "answer":"SQUID",
+               "level":2,
+               "noOfCoins":30,
+               "categoryId":1,
+               "hints":[
+                        {
+                        "id":17,
+                        "hint":"Old Bob to pound sea creature",
+                        "questionId":16
+                        },
+                        {
+                        "id":18,
+                        "hint":"A sea creature with a long body and ten arms situated around the mouth",
+                        "questionId":16
+                        },
+                        {
+                        "id":19,
+                        "hint":"An edible sea creature that has a long body with eight arms",
+                        "questionId":16
+                        }
+                        ]
+               },
+               {
+               "id":13,
+               "clue":"A goat antelope with vertical horns hooked backwards near the tip",
+               "answer":"CHAMOIS",
+               "level":2,
+               "noOfCoins":50,
+               "categoryId":1,
+               "hints":[
+                        {
+                        "id":20,
+                        "hint":"A species of goat-antelope native to mountains in Europe",
+                        "questionId":13
+                        },
+                        {
+                        "id":21,
+                        "hint":"Mountain antelope",
+                        "questionId":13
+                        },
+                        {
+                        "id":22,
+                        "hint":"A small, hoofed animal that looks somewhat like an unusual goat",
+                        "questionId":13
+                        }
+                        ]
+               },
+               {
+               "id":2,
+               "clue":"You wouldnt want to swim in the Amazon when these fish are around",
+               "answer":"PIRANHA",
+               "level":2,
+               "noOfCoins":40,
+               "categoryId":1,
+               "hints":[
+                        {
+                        "id":23,
+                        "hint":"Small freshwater fish of tropical America with strong jaws and sharp teeth",
+                        "questionId":2
+                        },
+                        {
+                        "id":24,
+                        "hint":"Some are vegetarians",
+                        "questionId":2
+                        },
+                        {
+                        "id":25,
+                        "hint":"A small, South American river fish with sharp teeth, that attacks and eats small animals",
+                        "questionId":2
+                        }
+                        ]
+               },
+               {
+               "id":5,
+               "clue":"Large flightless bird that is closely related to the ostrich and emu",
+               "answer":"RHEA",
+               "level":2,
+               "noOfCoins":60,
+               "categoryId":1,
+               "hints":[
+                        {
+                        "id":26,
+                        "hint":"Are large ratites in the order Rheiformes",
+                        "questionId":5
+                        },
+                        {
+                        "id":27,
+                        "hint":"Flightless Argentine bird",
+                        "questionId":5
+                        },
+                        {
+                        "id":28,
+                        "hint":"Distantly related to the ostrich and emu",
+                        "questionId":5
+                        }
+                        ]
+               },
+               {
+               "id":6,
+               "clue":"Shares its name with a well loved character from the movie The Goonies",
+               "answer":"SLOTH",
+               "level":2,
+               "noOfCoins":50,
+               "categoryId":1,
+               "hints":[
+                        {
+                        "id":29,
+                        "hint":"Arboreal mammals noted for slowness of movement",
+                        "questionId":6
+                        },
+                        {
+                        "id":30,
+                        "hint":"Spends much of its time hanging by its feet from trees",
+                        "questionId":6
+                        },
+                        {
+                        "id":31,
+                        "hint":"Are limited to the lowland tropical forests of South and Central America",
+                        "questionId":6
+                        }
+                        ]
+               },
+               {
+               "id":7,
+               "clue":"Shares its name with a well loved character from the movie The Goonies",
+               "answer":"MOLLY",
+               "level":2,
+               "noOfCoins":40,
+               "categoryId":1,
+               "hints":[
+                        {
+                        "id":32,
+                        "hint":"A small-sized tropical fish that is found naturally in the warm and peaceful rivers of Central America",
+                        "questionId":7
+                        },
+                        {
+                        "id":33,
+                        "hint":"Popular fish to be kept in the community of an artificial aquarium, all around the world",
+                        "questionId":7
+                        }
+                        ]
+               },
+               {
+               "id":8,
+               "clue":"A large flippered marine mammal with long tusks",
+               "answer":"WALRUS",
+               "level":2,
+               "noOfCoins":60,
+               "categoryId":1,
+               "hints":[
+                        {
+                        "id":34,
+                        "hint":"The walrus is a large flippered marine mammal with a discontinuous distribution about the North Pole",
+                        "questionId":8
+                        },
+                        {
+                        "id":35,
+                        "hint":"Animals with wrinkled brown and pink hides",
+                        "questionId":8
+                        },
+                        {
+                        "id":36,
+                        "hint":"They herd together on ice floes and on shore",
+                        "questionId":8
+                        }
+                        ]
+               },
+               {
+               "id":9,
+               "clue":"Large flightless bird that is native to Australia",
+               "answer":"EMU",
+               "level":2,
+               "noOfCoins":60,
+               "categoryId":1,
+               "hints":[
+                        {
+                        "id":37,
+                        "hint":"A flightless bird, such as the ostrich, kiwi or rhea",
+                        "questionId":9
+                        },
+                        {
+                        "id":38,
+                        "hint":"It is endemic to Australia",
+                        "questionId":9
+                        },
+                        {
+                        "id":39,
+                        "hint":"It is the largest native bird in Australia",
+                        "questionId":9
+                        }
+                        ]
+               },
+               {
+               "id":10,
+               "clue":"Insects related to butterflies",
+               "answer":"MOTH",
+               "level":2,
+               "noOfCoins":30,
+               "categoryId":1,
+               "hints":[
+                        {
+                        "id":40,
+                        "hint":"Usually flies at night, and is attracted to light:",
+                        "questionId":10
+                        },
+                        {
+                        "id":41,
+                        "hint":"Compared with butterflies, they have stouter bodies and duller colouring",
+                        "questionId":10
+                        },
+                        {
+                        "id":42,
+                        "hint":"Some ______ are farmed for their economic value",
+                        "questionId":10
+                        }
+                        ]
+               },
+               {
+               "id":11,
+               "clue":"This animal has the unfortunate myth of causing warts",
+               "answer":"TOAD",
+               "level":2,
+               "noOfCoins":20,
+               "categoryId":1,
+               "hints":[
+                        {
+                        "id":43,
+                        "hint":"Garden amphibian",
+                        "questionId":11
+                        },
+                        {
+                        "id":44,
+                        "hint":"An animal that has big eyes and long back legs for swimming and jumping",
+                        "questionId":11
+                        },
+                        {
+                        "id":45,
+                        "hint":"It becomes active at dusk and spends the night hunting for the invertebrates",
+                        "questionId":11
+                        }
+                        ]
+               }
+               ]
+  },
+  {
+  "id":2,
+  "name":"Sports",
+  "imageName":"sports",
+  "questions":[
+  
+  ]
+  },
+  {
+  "id":3,
+  "name":"Technology",
+  "imageName":"technology",
+  "questions":[
+  
+  ]
+  },
+  {
+  "id":4,
+  "name":"Music",
+  "imageName":"music",
+  "questions":[
+  
+  ]
+  },
+  {
+  "id":5,
+  "name":"Movies",
+  "imageName":"movies",
+  "questions":[
+  
+  ]
+  },
+  {
+  "id":6,
+  "name":"Underwater",
+  "imageName":"underwater",
+  "questions":[
+  
+  ]
+  }
+            ]}
