@@ -19,6 +19,10 @@ class Game: UIView {
     */
     @IBOutlet weak var gridContainerView: UIView!
     
+    @IBOutlet weak var letterStakView: UIStackView!
+    
+    @IBOutlet weak var questionStackView: UIStackView!
+    
     var gameQuestions=[Question]()
     var sugesstions=[Question]()
     var uniqueLetters = Set<Character>()
@@ -28,6 +32,7 @@ class Game: UIView {
     let MAX_GRID_TILES = 10
     var gridMap = [[Int]]()
     var viewArray : [[UIView]] = []
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -225,6 +230,29 @@ class Game: UIView {
         }
         
         return view
+    }
+    
+    func loadQuestionsToTable() {
+        var iterator = 0;
+        for question in gameQuestions {
+            let lable =  GameQuestionViewLabel(frame: CGRect(x: 0, y: 0, width: questionStackView.frame.width, height: 25))
+            lable.text = question.clue!
+            questionStackView.insertArrangedSubview(lable, at: iterator)
+            iterator = iterator+1
+            
+        }
+        
+    }
+    
+    func  loadLettersToStackView() {
+        var iterator = 0;
+        for letter in uniqueLetters {
+            let lable =  GameLetterViewLabel(frame: CGRect(x: 0, y: 0, width: letterStakView.frame.width, height: 25))
+            lable.text = String(letter)
+            letterStakView.insertArrangedSubview(lable, at: iterator)
+            iterator = iterator+1
+            
+        }
     }
     
 }
