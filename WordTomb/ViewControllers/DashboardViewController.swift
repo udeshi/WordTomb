@@ -25,6 +25,8 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         loadCategories()
         tableView.delegate = self
         tableView.dataSource = self
+      //  setUserProfileImageInNavBar()
+        
         let skView = self.view as! SKView
         let scene = LoginScene(size: CGSize(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
         
@@ -33,10 +35,28 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         skView.presentScene(scene)
     }
     
+    func setUserProfileImageInNavBar(){
+        let button: UIButton = UIButton.init(type: .custom)
+        //set image for button
+        button.setImage(UIImage(named:"userIcon.png"), for: UIControlState.normal)
+        //add function for button
+        button.addTarget(self, action: #selector(DashboardViewController.viewUserProfile), for: UIControlEvents.touchUpInside)
+        //set frame
+        button.frame = CGRect(x: 0, y:0,width:53, height:51)
+        let barButton = UIBarButtonItem(customView: button)
+        //assign button to nav bar
+        self.navigationItem.rightBarButtonItem = barButton
+    }
+    
     func loadCategories () {
         categories = CoreDataHandler.fetchCategoryDetails()
         
         
+    }
+    
+    
+    @objc func viewUserProfile(){
+        print("view it")
     }
     
     

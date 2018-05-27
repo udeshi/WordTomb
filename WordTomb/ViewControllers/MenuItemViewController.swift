@@ -14,18 +14,34 @@ import GameplayKit
 
 class MenuItemViewController: UIViewController{
     
-    @IBOutlet var contentView: UIView!
+    @IBOutlet var contentView: SKView!
     var selectedItemTag = 0
-    var currentView : SKView!
     override func viewDidLoad() {
         super.viewDidLoad()
          print(selectedItemTag)
-        let skView = self.view as! SKView
-        let scene = SettingsScene(size: CGSize(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
-        
-        scene.scaleMode  = .aspectFill
-        currentView = skView
-        skView.presentScene(scene)
+        let skView = self.contentView
+
+        switch selectedItemTag{
+        case 1001:
+            let scene = AboutGameScene(size: CGSize(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+            
+            scene.scaleMode  = .aspectFill
+            skView?.presentScene(scene)
+            break
+        case 1005:
+            let scene = SettingsScene(size: CGSize(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+            
+            scene.scaleMode  = .aspectFill
+            skView?.presentScene(scene)
+            break
+        default:
+            let scene = AboutGameScene(size: CGSize(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+            
+            scene.scaleMode  = .aspectFill
+            skView?.presentScene(scene)
+            break
+        }
+     
 
     }
 

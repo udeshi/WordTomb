@@ -6,10 +6,14 @@
 //  Copyright © 2018 Udeshi. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 class AboutGame: UIView {
-
+    
+    var view: UIView!
+    
+    var sceneNavigator : SceneNavigator?
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.

@@ -1,8 +1,8 @@
 //
-//  Settings.swift
+//  AboutGameScene.swift
 //  WordTomb
 //
-//  Created by Udeshi on 5/26/18.
+//  Created by Udeshi on 5/27/18.
 //  Copyright © 2018 Udeshi. All rights reserved.
 //
 
@@ -10,12 +10,12 @@ import Foundation
 
 import SpriteKit
 
-class SettingsScene: SKScene,SceneNavigator {
+class AboutGameScene: SKScene,SceneNavigator {
     
     override func didMove(to view: SKView) {
         
         // add sub view
-        let tempView = Bundle.main.loadNibNamed("Settings", owner: self, options: nil)?.first as? Settings
+        let tempView = Bundle.main.loadNibNamed("AboutGame", owner: self, options: nil)?.first as? AboutGame
         if let tempView = tempView {
             tempView.sceneNavigator = self
             view.addSubview(tempView)
@@ -24,7 +24,7 @@ class SettingsScene: SKScene,SceneNavigator {
     }
     
     func navigateToScene(screenName: String) {
-       
+        
         
     }
 }

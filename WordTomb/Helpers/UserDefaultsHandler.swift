@@ -28,6 +28,11 @@ class  UserDefaultsHandler{
         return value!
     }
     
+    func removeUserdefaults(key:String){
+        defaults.removePersistentDomain(forName: key)
+        defaults.synchronize()
+    }
+    
     // access all records
     func  getAllData(key:String) -> [String] {
         var history : [String] = loadHistory(key : key);

@@ -18,6 +18,7 @@
 		0D317F86209EBC580004E560 /* LoginScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D317F85209EBC580004E560 /* LoginScene.swift */; };
 		0D5FB8B620BA83D40036968F /* AboutGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5FB8B520BA83D30036968F /* AboutGame.swift */; };
 		0D5FB8B820BA83EC0036968F /* AboutGame.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D5FB8B720BA83EC0036968F /* AboutGame.xib */; };
+		0D5FB8BB20BABE5F0036968F /* AboutGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5FB8BA20BABE5F0036968F /* AboutGameScene.swift */; };
 		0D63CC6D20A0644A00A4DE2A /* UserDefaultsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D63CC6C20A0644A00A4DE2A /* UserDefaultsHandler.swift */; };
 		0D6552A2209EC663008146B5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6552A1209EC663008146B5 /* LoginViewController.swift */; };
 		0D6552A5209ECE4F008146B5 /* authScreenBackgroundImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0D6552A4209ECE4F008146B5 /* authScreenBackgroundImage.jpg */; };
@@ -82,6 +83,7 @@
 		0D5FB8B520BA83D30036968F /* AboutGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutGame.swift; sourceTree = "<group>"; };
 		0D5FB8B720BA83EC0036968F /* AboutGame.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutGame.xib; sourceTree = "<group>"; };
 		0D5FB8B920BA840E0036968F /* AboutGame.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutGame.xib; sourceTree = "<group>"; };
+		0D5FB8BA20BABE5F0036968F /* AboutGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutGameScene.swift; sourceTree = "<group>"; };
 		0D63CC6C20A0644A00A4DE2A /* UserDefaultsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHandler.swift; sourceTree = "<group>"; };
 		0D6552A1209EC663008146B5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0D6552A4209ECE4F008146B5 /* authScreenBackgroundImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = authScreenBackgroundImage.jpg; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				0DAF222220A868BA001A9F98 /* GameViewScene.swift */,
 				0D8432C620B1321000870EEC /* ChambersScene.swift */,
 				0D872B5020B9A6D700A003FB /* SettingsScene.swift */,
+				0D5FB8BA20BABE5F0036968F /* AboutGameScene.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				461E543520AD3AB1006659EF /* Level+CoreDataClass.swift in Sources */,
 				0DAF222120A85F5E001A9F98 /* Chambers.swift in Sources */,
 				461E543A20AD3AB1006659EF /* User+CoreDataProperties.swift in Sources */,
+				0D5FB8BB20BABE5F0036968F /* AboutGameScene.swift in Sources */,
 				0DAF221B20A802A5001A9F98 /* DashboardCustomTableViewCell.swift in Sources */,
 				0D7E7670209F3BF4003E6958 /* SignupScene.swift in Sources */,
 				0DAF222920A8765E001A9F98 /* CommonHelper.swift in Sources */,

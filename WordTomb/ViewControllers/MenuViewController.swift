@@ -19,6 +19,10 @@ class MenuViewController: UIViewController{
     }
     
     
+    @IBAction func logoutBtnClicked(_ sender: UIButton) {
+         UserDefaultsHandler().removeUserdefaults(key: "Session")
+    }
+  
     @IBAction func menuItemclicked(_ sender: UIButton) {
        selectedItemTag = sender.tag
        self.performSegue(withIdentifier: "MenuItemSegue", sender: self)
@@ -29,4 +33,6 @@ class MenuViewController: UIViewController{
             vc.selectedItemTag = selectedItemTag
         }
     }
+    
+    
 }

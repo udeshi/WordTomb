@@ -2,7 +2,7 @@
 //  User+CoreDataProperties.swift
 //  WordTomb
 //
-//  Created by Frank Thamel on 5/17/18.
+//  Created by Udeshi on 5/27/18.
 //  Copyright © 2018 Udeshi. All rights reserved.
 //
 //
@@ -20,7 +20,7 @@ extension User {
     @NSManaged public var email: String?
     @NSManaged public var id: Int32
     @NSManaged public var password: String?
-    @NSManaged public var profileImageUrl: URL?
+    @NSManaged public var profileImageUrl: NSData?
     @NSManaged public var userName: String?
     @NSManaged public var has: NSSet?
 
