@@ -146,7 +146,10 @@ class  CoreDataHandler: NSObject {
         request.predicate = predicate
         
         do{
-            user = try context.fetch(request)[0]
+            var userResult = try context.fetch(request)
+            if(userResult.count > 0){
+              user =   userResult[0]
+            }
             return user
         }
         catch{
