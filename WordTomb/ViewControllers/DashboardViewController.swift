@@ -66,13 +66,13 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
             cell.evenCategoryImage.image = UIImage(named: categories[indexPath.row].image!)
             cell.evenCategoryName.text = categories[indexPath.row].name
         cell.backgroundColor = UIColor.black.withAlphaComponent(0.4)
-            cell.evenCategoryImage.image?.resizableImage(withCapInsets: UIEdgeInsets(top:0,left:0,bottom:0,right:0), resizingMode: .stretch)
+            cell.evenCategoryImage.image?.resizableImage(withCapInsets: UIEdgeInsets(top:8,left:8,bottom:8,right:8), resizingMode: .stretch)
             return cell
         }else{
         let cell = tableView.dequeueReusableCell(withIdentifier: "oddDashboardCellView") as! DashboardCustomTableViewCell
         cell.oddCategoryImage.image = UIImage(named: categories[indexPath.row].image!)
         cell.backgroundColor = UIColor.black.withAlphaComponent(0.4)
-        cell.oddCategoryImage.image?.resizableImage(withCapInsets: UIEdgeInsets(top:0,left:0,bottom:0,right:0), resizingMode: .stretch)
+        cell.oddCategoryImage.image?.resizableImage(withCapInsets: UIEdgeInsets(top:8,left:8,bottom:8,right:8), resizingMode: .stretch)
         cell.oddCategoryName.text = categories[indexPath.row].name
         return cell
         }
@@ -88,7 +88,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         let chambersScreen = ChambersScene(size: CGSize(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
         
         chambersScreen.scaleMode  = .aspectFill
-        chambersScreen.size = self.view.frame.size
+        chambersScreen.size = UIScreen.main.bounds.size
         currentView.presentScene(chambersScreen, transition: reveal)
     }
 

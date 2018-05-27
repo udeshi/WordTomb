@@ -16,6 +16,8 @@
 		0D317F7B209EBBF60004E560 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D317F7A209EBBF60004E560 /* Assets.xcassets */; };
 		0D317F7E209EBBF60004E560 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D317F7C209EBBF60004E560 /* LaunchScreen.storyboard */; };
 		0D317F86209EBC580004E560 /* LoginScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D317F85209EBC580004E560 /* LoginScene.swift */; };
+		0D5FB8B620BA83D40036968F /* AboutGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5FB8B520BA83D30036968F /* AboutGame.swift */; };
+		0D5FB8B820BA83EC0036968F /* AboutGame.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D5FB8B720BA83EC0036968F /* AboutGame.xib */; };
 		0D63CC6D20A0644A00A4DE2A /* UserDefaultsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D63CC6C20A0644A00A4DE2A /* UserDefaultsHandler.swift */; };
 		0D6552A2209EC663008146B5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6552A1209EC663008146B5 /* LoginViewController.swift */; };
 		0D6552A5209ECE4F008146B5 /* authScreenBackgroundImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0D6552A4209ECE4F008146B5 /* authScreenBackgroundImage.jpg */; };
@@ -77,6 +79,9 @@
 		0D317F7D209EBBF60004E560 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D317F7F209EBBF60004E560 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D317F85209EBC580004E560 /* LoginScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginScene.swift; path = "../New Group/LoginScene.swift"; sourceTree = "<group>"; };
+		0D5FB8B520BA83D30036968F /* AboutGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutGame.swift; sourceTree = "<group>"; };
+		0D5FB8B720BA83EC0036968F /* AboutGame.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutGame.xib; sourceTree = "<group>"; };
+		0D5FB8B920BA840E0036968F /* AboutGame.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutGame.xib; sourceTree = "<group>"; };
 		0D63CC6C20A0644A00A4DE2A /* UserDefaultsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHandler.swift; sourceTree = "<group>"; };
 		0D6552A1209EC663008146B5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0D6552A4209ECE4F008146B5 /* authScreenBackgroundImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = authScreenBackgroundImage.jpg; sourceTree = "<group>"; };
@@ -140,6 +145,7 @@
 		0D317F61209EBBF30004E560 = {
 			isa = PBXGroup;
 			children = (
+				0D5FB8B720BA83EC0036968F /* AboutGame.xib */,
 				0D317F6C209EBBF50004E560 /* WordTomb */,
 				0D317F6B209EBBF50004E560 /* Products */,
 			);
@@ -246,6 +252,8 @@
 				0DAF222620A868FE001A9F98 /* Game.xib */,
 				0D872B5220B9AA6700A003FB /* Settings.xib */,
 				0D872B5420B9AAD900A003FB /* Settings.swift */,
+				0D5FB8B920BA840E0036968F /* AboutGame.xib */,
+				0D5FB8B520BA83D30036968F /* AboutGame.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -358,6 +366,7 @@
 				0D317F72209EBBF60004E560 /* Actions.sks in Resources */,
 				0D872B5320B9AA6700A003FB /* Settings.xib in Resources */,
 				0DAF222720A868FE001A9F98 /* Game.xib in Resources */,
+				0D5FB8B820BA83EC0036968F /* AboutGame.xib in Resources */,
 				0DAF221D20A853F1001A9F98 /* Chambers.xib in Resources */,
 				0D7E7679209F4A30003E6958 /* HamburgerMenu.xib in Resources */,
 				0D6A829420A7388E002F2BBB /* Category.json in Resources */,
@@ -391,6 +400,7 @@
 				0D6552A2209EC663008146B5 /* LoginViewController.swift in Sources */,
 				0DA0D0A720ABAF980014EC9E /* MenuViewController.swift in Sources */,
 				461E543920AD3AB1006659EF /* User+CoreDataClass.swift in Sources */,
+				0D5FB8B620BA83D40036968F /* AboutGame.swift in Sources */,
 				0D70DAB520BA621B0016E542 /* GameLettersTableViewCell.swift in Sources */,
 				0D872B5520B9AAD900A003FB /* Settings.swift in Sources */,
 				0DA0D0A420ABA3800014EC9E /* UIButtonExtension.swift in Sources */,
