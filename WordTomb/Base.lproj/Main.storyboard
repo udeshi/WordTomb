@@ -527,11 +527,7 @@
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="tUg-Bh-j0s">
-<<<<<<< HEAD
                                 <rect key="frame" x="113" y="114" width="608" height="804"/>
-=======
-                                <rect key="frame" x="252" y="70" width="608" height="570"/>
->>>>>>> 406006136d2fa5069eefa7bbc719cb6dcc5b0210
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="180" translatesAutoresizingMaskIntoConstraints="NO" id="ci8-GV-w0w">
                                         <rect key="frame" x="0.0" y="0.0" width="608" height="25"/>
@@ -555,11 +551,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="180" translatesAutoresizingMaskIntoConstraints="NO" id="AuI-v9-P3l">
-<<<<<<< HEAD
                                         <rect key="frame" x="0.0" y="251.5" width="608" height="25"/>
-=======
-                                        <rect key="frame" x="0.0" y="173.5" width="608" height="25"/>
->>>>>>> 406006136d2fa5069eefa7bbc719cb6dcc5b0210
                                         <subviews>
                                             <button opaque="NO" tag="1002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aCX-pP-dd7" customClass="UIButtonextension" customModule="WordTomb" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="99" height="25"/>
@@ -583,11 +575,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="180" translatesAutoresizingMaskIntoConstraints="NO" id="MRK-my-RHX">
-<<<<<<< HEAD
                                         <rect key="frame" x="0.0" y="502.5" width="608" height="25"/>
-=======
-                                        <rect key="frame" x="0.0" y="346.5" width="608" height="25"/>
->>>>>>> 406006136d2fa5069eefa7bbc719cb6dcc5b0210
                                         <subviews>
                                             <button opaque="NO" tag="1004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6yO-qf-rze" customClass="UIButtonextension" customModule="WordTomb" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="128" height="25"/>
@@ -609,11 +597,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" tag="1006" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePj-ge-eUe" customClass="UIButtonextension" customModule="WordTomb" customModuleProvider="target">
-<<<<<<< HEAD
                                         <rect key="frame" x="0.0" y="754" width="608" height="50"/>
-=======
-                                        <rect key="frame" x="0.0" y="520" width="608" height="50"/>
->>>>>>> 406006136d2fa5069eefa7bbc719cb6dcc5b0210
                                         <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
                                         <inset key="titleEdgeInsets" minX="0.0" minY="80" maxX="0.0" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="65" minY="0.0" maxX="0.0" maxY="0.0"/>
