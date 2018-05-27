@@ -27,27 +27,31 @@ class Game: UIView {
     let TILE_HEIGHT : CGFloat = 70
     let MAX_GRID_TILES = 10
     var gridMap = [[Int]]()
-    let tempDataAray = [[0,1,1,1,0,0,1,1,1,0],[1,1,1,0,0,0,1,1,1,0],[0,0,0,1,0,0,1,1,1,0],[1,0,1,0,1,0,1,1,1,0],[0,1,0,1,0,0,1,1,1,0]]
     var viewArray : [[UIView]] = []
     
     override func awakeFromNib() {
         super.awakeFromNib()
         initiliaze()
-        creatGridArray()
-        createViewArray()
-        loadTilesToGrid()
+        if (sugesstions.count > 0){
+            creatGridArray()
+            createViewArray()
+            loadTilesToGrid()
+        }
     }
     
     func initiliaze(){
         let categoryType = UserDefaultsHandler().getData(key: "selectedCategoryId")
-        sugesstions = CoreDataHandler.fetchQuestions(level: 1, type: Int(categoryType)!)
-        let randomIndex = Common().getRandomNumber(arrayCount: sugesstions.count)
-        let question = sugesstions[randomIndex]
+           let selectedLevel = UserDefaultsHandler().getData(key: "selectedLevel")
+        sugesstions = CoreDataHandler.fetchQuestions(level: Int(selectedLevel)!, type: Int(categoryType)!)
+        if(sugesstions.count > 0){
+            let randomIndex = Common().getRandomNumber(arrayCount: sugesstions.count)
+            let question = sugesstions[randomIndex]
              print(question.answer)
-        randomIndexes.append(["index" : 0, "letter" : Array(question.answer!)[0]])
-        gameQuestions.append(question)
-        sugesstions.remove(at: Int(randomIndex))
-        getOtherQuestions(comparedWith: 0)
+            randomIndexes.append(["index" : 0, "letter" : Array(question.answer!)[0]])
+            gameQuestions.append(question)
+            sugesstions.remove(at: Int(randomIndex))
+            getOtherQuestions(comparedWith: 0)
+        }
     }
     
     private func getOtherQuestions(comparedWith: Int){

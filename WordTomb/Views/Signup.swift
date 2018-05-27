@@ -18,6 +18,9 @@ class Signup: UIView {
     @IBOutlet weak var password: UITextField!
     
     @IBAction func getStartedBtnClicked(_ sender: UIButton) {
+        email.text = "test@gmail.com"
+        userName.text = "test"
+        password.text = "user@123"
         if(email.text != "" && userName.text != "" && password.text != ""){
             if (CoreDataHandler.saveUserDetails(userName: userName.text!, email: email.text!, password: password.text! )){
                 sceneNavigator?.navigateToScene(screenName: "Dashboard")

@@ -15,6 +15,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var email: UITextField!
     var sceneNavigator : SceneNavigator?
     
+    @IBOutlet weak var loginForm: UIView!
     var currentView : SKView!
     
     override func viewDidLoad() {
@@ -53,8 +54,9 @@ class LoginViewController: UIViewController {
         let signupScreen = SignupScene(size: CGSize(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
         
         signupScreen.scaleMode  = .aspectFill
-        signupScreen.size = self.view.frame.size
-        currentView.presentScene(signupScreen, transition: reveal)
+        signupScreen.size = UIScreen.main.bounds.size
+       self.loginForm.isHidden = true
+    currentView.presentScene(signupScreen, transition: reveal)
     }
     @IBAction func guestBtnClciked(_ sender: UIButton) {
         sceneNavigator?.navigateToScene(screenName: "Dashboard")

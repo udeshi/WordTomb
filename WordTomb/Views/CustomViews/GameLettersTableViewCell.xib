@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="GameLettersTableViewCell" customModule="WordTomb" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="150" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="150" height="49.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ztP-uU-Pwd">
+                        <rect key="frame" x="16" y="11" width="118" height="28"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="33s-0l-DBC">
+                                <rect key="frame" x="0.0" y="0.0" width="59" height="28"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ATe-Po-MlS">
+                                <rect key="frame" x="59" y="0.0" width="59" height="28"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="ztP-uU-Pwd" secondAttribute="bottom" id="1tg-31-PAa"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="ztP-uU-Pwd" secondAttribute="trailing" id="KMu-PO-Te5"/>
+                    <constraint firstItem="ztP-uU-Pwd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Rdp-1r-40p"/>
+                    <constraint firstItem="ztP-uU-Pwd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="l00-Xg-mXS"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="leftLetterButton" destination="33s-0l-DBC" id="p1d-mQ-awl"/>
+                <outlet property="rightLetterButton" destination="ATe-Po-MlS" id="AMF-30-M0Y"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

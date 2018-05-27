@@ -16,7 +16,8 @@ class Chambers: UIView {
     
     @IBAction func chamberSelected(_ sender: UIButton) {
         let value = sender.tag
-        sceneNavigator?.navigateToScene(screenName: "Game")
+       UserDefaultsHandler().save(data: value, key: "selectedLevel")
+    sceneNavigator?.navigateToScene(screenName: "Game")
 
     }
 

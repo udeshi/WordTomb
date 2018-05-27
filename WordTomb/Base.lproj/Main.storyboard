@@ -157,6 +157,7 @@
                     </view>
                     <connections>
                         <outlet property="email" destination="0QB-v1-hD4" id="hPo-Rq-oVG"/>
+                        <outlet property="loginForm" destination="YO7-1S-Fnt" id="0ST-Rs-ZwF"/>
                         <outlet property="password" destination="boQ-5V-jYA" id="OfQ-fu-xdB"/>
                     </connections>
                 </viewController>
@@ -513,7 +514,7 @@
         <scene sceneID="bVz-DM-5zl">
             <objects>
                 <viewController id="J1w-Ts-0aN" customClass="MenuViewController" customModule="WordTomb" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ckH-Oc-RFw">
+                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="ckH-Oc-RFw">
                         <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -525,7 +526,7 @@
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="tUg-Bh-j0s">
-                                <rect key="frame" x="252" y="114" width="608" height="526"/>
+                                <rect key="frame" x="113" y="114" width="608" height="804"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="180" translatesAutoresizingMaskIntoConstraints="NO" id="ci8-GV-w0w">
                                         <rect key="frame" x="0.0" y="0.0" width="608" height="25"/>
@@ -549,7 +550,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="180" translatesAutoresizingMaskIntoConstraints="NO" id="AuI-v9-P3l">
-                                        <rect key="frame" x="0.0" y="158.5" width="608" height="25"/>
+                                        <rect key="frame" x="0.0" y="251.5" width="608" height="25"/>
                                         <subviews>
                                             <button opaque="NO" tag="1002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aCX-pP-dd7" customClass="UIButtonextension" customModule="WordTomb" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="99" height="25"/>
@@ -573,7 +574,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="180" translatesAutoresizingMaskIntoConstraints="NO" id="MRK-my-RHX">
-                                        <rect key="frame" x="0.0" y="317.5" width="608" height="25"/>
+                                        <rect key="frame" x="0.0" y="502.5" width="608" height="25"/>
                                         <subviews>
                                             <button opaque="NO" tag="1004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6yO-qf-rze" customClass="UIButtonextension" customModule="WordTomb" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="128" height="25"/>
@@ -595,7 +596,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" tag="1006" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePj-ge-eUe" customClass="UIButtonextension" customModule="WordTomb" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="476" width="608" height="50"/>
+                                        <rect key="frame" x="0.0" y="754" width="608" height="50"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
                                         <inset key="titleEdgeInsets" minX="0.0" minY="80" maxX="0.0" maxY="0.0"/>
                                         <inset key="imageEdgeInsets" minX="65" minY="0.0" maxX="0.0" maxY="0.0"/>

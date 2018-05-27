@@ -314,11 +314,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/ViewControllers/LoginViewController.swift"
-            timestampString = "548818661.02792"
+            timestampString = "549082447.784036"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -330,11 +330,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/ViewControllers/LoginViewController.swift"
-            timestampString = "548818661.02897"
+            timestampString = "549082447.784321"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -394,7 +394,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Helpers/CoreDataHandler.swift"
-            timestampString = "549037495.531274"
+            timestampString = "549082447.784608"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "54"
@@ -490,7 +490,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Helpers/CoreDataHandler.swift"
-            timestampString = "549037495.531618"
+            timestampString = "549082447.7848819"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "61"
@@ -506,7 +506,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Helpers/CoreDataHandler.swift"
-            timestampString = "549037495.531747"
+            timestampString = "549082447.7850471"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "57"
@@ -522,7 +522,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Helpers/CoreDataHandler.swift"
-            timestampString = "549037495.531859"
+            timestampString = "549082447.785154"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "58"
@@ -538,7 +538,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Helpers/CoreDataHandler.swift"
-            timestampString = "549037495.531965"
+            timestampString = "549082447.785255"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "36"
@@ -554,11 +554,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/ViewControllers/LoginViewController.swift"
-            timestampString = "548818661.030897"
+            timestampString = "549082447.785358"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -570,11 +570,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/ViewControllers/LoginViewController.swift"
-            timestampString = "548818661.031958"
+            timestampString = "549082447.78546"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -634,7 +634,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Helpers/CoreDataHandler.swift"
-            timestampString = "549037495.532423"
+            timestampString = "549082447.785722"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
@@ -650,7 +650,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Helpers/CoreDataHandler.swift"
-            timestampString = "549037495.53256"
+            timestampString = "549082447.785828"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "43"
@@ -666,7 +666,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Helpers/CoreDataHandler.swift"
-            timestampString = "549037495.532668"
+            timestampString = "549082447.785983"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "42"
@@ -682,7 +682,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Helpers/CoreDataHandler.swift"
-            timestampString = "549037495.532773"
+            timestampString = "549082447.786122"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "38"
@@ -730,7 +730,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Helpers/CoreDataHandler.swift"
-            timestampString = "549037495.532935"
+            timestampString = "549082447.786235"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "39"
@@ -746,7 +746,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Helpers/CoreDataHandler.swift"
-            timestampString = "549037495.533137"
+            timestampString = "549082447.7863311"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "40"
@@ -762,7 +762,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Helpers/CoreDataHandler.swift"
-            timestampString = "549037495.533246"
+            timestampString = "549082447.786427"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
@@ -778,7 +778,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Helpers/CoreDataHandler.swift"
-            timestampString = "549037495.533349"
+            timestampString = "549082447.786523"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "52"
@@ -1034,11 +1034,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Views/Chambers.swift"
-            timestampString = "548489479.838312"
+            timestampString = "549082447.78733"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
             landmarkName = "chamberSelected(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1050,7 +1050,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Screens/ChambersScene.swift"
-            timestampString = "548558743.568952"
+            timestampString = "549083792.279333"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "22"
@@ -1066,7 +1066,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Screens/ChambersScene.swift"
-            timestampString = "548558743.569067"
+            timestampString = "549083792.365797"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "16"
@@ -1082,7 +1082,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Screens/ChambersScene.swift"
-            timestampString = "548558743.569134"
+            timestampString = "549083792.36683"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "32"
@@ -1098,7 +1098,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Screens/ChambersScene.swift"
-            timestampString = "548558743.569193"
+            timestampString = "549083792.36771"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "23"
@@ -1114,7 +1114,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Screens/ChambersScene.swift"
-            timestampString = "548558743.5692509"
+            timestampString = "549083792.368227"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
@@ -1130,7 +1130,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Helpers/CoreDataHandler.swift"
-            timestampString = "549037495.534428"
+            timestampString = "549082447.7876951"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "124"
@@ -1146,7 +1146,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Helpers/CoreDataHandler.swift"
-            timestampString = "549037495.534564"
+            timestampString = "549082447.7878031"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "125"
@@ -1162,11 +1162,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Views/Game.swift"
-            timestampString = "549037495.5347151"
+            timestampString = "549082447.78798"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "initiliaze()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1178,7 +1178,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Helpers/CoreDataHandler.swift"
-            timestampString = "549037495.535686"
+            timestampString = "549082447.788092"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "128"
@@ -1194,7 +1194,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Helpers/CoreDataHandler.swift"
-            timestampString = "549037495.535836"
+            timestampString = "549082447.788191"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "130"
@@ -1210,7 +1210,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Helpers/CoreDataHandler.swift"
-            timestampString = "549037495.5359451"
+            timestampString = "549082447.788289"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "129"
@@ -1226,12 +1226,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Views/Game.swift"
-            timestampString = "549037495.536055"
+            timestampString = "549082447.788386"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "initiliaze()"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "awakeFromNib()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1242,7 +1242,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Helpers/CoreDataHandler.swift"
-            timestampString = "549037495.536854"
+            timestampString = "549082447.788484"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "56"
@@ -1258,7 +1258,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Helpers/CoreDataHandler.swift"
-            timestampString = "549037495.5370359"
+            timestampString = "549082447.788584"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "84"
@@ -1274,11 +1274,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Views/Game.swift"
-            timestampString = "549037495.537154"
+            timestampString = "549082447.7886831"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "initiliaze()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1290,11 +1290,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Views/Game.swift"
-            timestampString = "549037495.537922"
+            timestampString = "549082447.78878"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "initiliaze()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1306,44 +1306,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Views/Game.swift"
-            timestampString = "549037495.538618"
+            timestampString = "549082447.7889349"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "initiliaze()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WordTomb/Views/Game.swift"
-            timestampString = "549037495.539395"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "Game"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WordTomb/Views/Game.swift"
-            timestampString = "549037495.540132"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "getOtherQuestions(comparedWith:)"
             landmarkType = "7">
             <Locations>
                <Location
@@ -1386,11 +1354,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Views/Game.swift"
-            timestampString = "549037495.5408601"
+            timestampString = "549082447.789036"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "awakeFromNib()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1402,11 +1370,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Views/Game.swift"
-            timestampString = "549037495.541527"
+            timestampString = "549082447.789137"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "getOtherQuestions(comparedWith:)"
             landmarkType = "7">
             <Locations>
@@ -1450,13 +1418,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Views/Game.swift"
-            timestampString = "549037495.542196"
+            timestampString = "549082447.789233"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
-            landmarkName = "insertToArray(letters:)"
-            landmarkType = "7">
+            startingLineNumber = "171"
+            endingLineNumber = "171"
+            landmarkName = "Game"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1466,11 +1434,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Views/Game.swift"
-            timestampString = "549037495.543065"
+            timestampString = "549082447.789327"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
             landmarkName = "creatGridArray()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1482,7 +1450,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Helpers/CoreDataHandler.swift"
-            timestampString = "549037495.543865"
+            timestampString = "549082447.789425"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "176"
@@ -1498,7 +1466,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Helpers/CoreDataHandler.swift"
-            timestampString = "549037495.544042"
+            timestampString = "549082447.789524"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "100"
@@ -1514,7 +1482,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Helpers/CoreDataHandler.swift"
-            timestampString = "549037495.544173"
+            timestampString = "549082447.789619"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "182"
@@ -1530,7 +1498,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Helpers/CoreDataHandler.swift"
-            timestampString = "549037495.544332"
+            timestampString = "549082447.789716"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "180"
@@ -1546,11 +1514,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Views/Game.swift"
-            timestampString = "549037495.544462"
+            timestampString = "549082447.78986"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
             landmarkName = "creatGridArray()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1562,11 +1530,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Views/Game.swift"
-            timestampString = "549037495.5451601"
+            timestampString = "549082447.789971"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
             landmarkName = "creatGridArray()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1578,11 +1546,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Views/Game.swift"
-            timestampString = "549037495.5470361"
+            timestampString = "549082447.790068"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
             landmarkName = "creatGridArray()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1594,11 +1562,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Views/Game.swift"
-            timestampString = "549037495.547754"
+            timestampString = "549082447.790164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "creatGridArray()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1610,11 +1578,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Views/Game.swift"
-            timestampString = "549037495.548437"
+            timestampString = "549082447.790258"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
             landmarkName = "getCompatibleQuestions(compatibleQuestions:randomIndex:matchedLetter:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1626,11 +1594,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Views/Game.swift"
-            timestampString = "549037495.549176"
+            timestampString = "549082447.790365"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
             landmarkName = "creatGridArray()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1642,11 +1610,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Views/Game.swift"
-            timestampString = "549037495.5499279"
+            timestampString = "549082447.790476"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
             landmarkName = "getCompatibleQuestions(compatibleQuestions:randomIndex:matchedLetter:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1658,11 +1626,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Views/Game.swift"
-            timestampString = "549037495.55062"
+            timestampString = "549082447.790572"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
             landmarkName = "getCompatibleQuestions(compatibleQuestions:randomIndex:matchedLetter:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1674,12 +1642,124 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WordTomb/Views/Game.swift"
-            timestampString = "549037495.551363"
+            timestampString = "549082447.790668"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
             landmarkName = "creatGridArray()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WordTomb/Views/Signup.swift"
+            timestampString = "549082447.790859"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "getStartedBtnClicked(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WordTomb/Views/Signup.swift"
+            timestampString = "549082447.790971"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "getStartedBtnClicked(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WordTomb/Views/Signup.swift"
+            timestampString = "549082447.791043"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "getStartedBtnClicked(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WordTomb/Views/Signup.swift"
+            timestampString = "549082447.791188"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "getStartedBtnClicked(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WordTomb/Screens/SignupScene.swift"
+            timestampString = "549074830.03342"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "navigateToScene(screenName:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WordTomb/Helpers/CoreDataHandler.swift"
+            timestampString = "549082447.7913671"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "saveUserDetails(userName:email:password:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WordTomb/Screens/SignupScene.swift"
+            timestampString = "549074882.010217"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "navigateToScene(screenName:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
