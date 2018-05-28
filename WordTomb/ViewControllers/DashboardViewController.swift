@@ -11,12 +11,15 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-class DashboardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class DashboardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITabBarDelegate{
     
-    @IBOutlet weak var chambers: SKView!
+    @IBOutlet weak var dashboardContentView: SKView!
     var currentView : SKView!
+    var activeTab = 0
     
+    @IBOutlet weak var tabBar: UITabBar!
     
+    @IBOutlet weak var tabContentView: SKView!
     @IBOutlet weak var tableView: UITableView!
    
     var categories: [Category] = []
@@ -25,14 +28,17 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         loadCategories()
         tableView.delegate = self
         tableView.dataSource = self
-      //  setUserProfileImageInNavBar()
+        tabBar.delegate = self
+        setUserProfileImageInNavBar()
         
-        let skView = self.view as! SKView
-        let scene = LoginScene(size: CGSize(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+        let skView = self.dashboardContentView
+        let scene = DashboardScene(size: CGSize(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
         
-        scene.scaleMode  = .aspectFill
+        scene.scaleMode  = .resizeFill
         currentView = skView
-        skView.presentScene(scene)
+        skView?.presentScene(scene)
+        self.dashboardContentView.isHidden = false
+        self.tabContentView.isHidden = true
     }
     
     func setUserProfileImageInNavBar(){
@@ -42,7 +48,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         //add function for button
         button.addTarget(self, action: #selector(DashboardViewController.viewUserProfile), for: UIControlEvents.touchUpInside)
         //set frame
-        button.frame = CGRect(x: 0, y:0,width:53, height:51)
+        button.frame = CGRect(x: 0, y:0,width:10, height:20)
         let barButton = UIBarButtonItem(customView: button)
         //assign button to nav bar
         self.navigationItem.rightBarButtonItem = barButton
@@ -112,4 +118,31 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         currentView.presentScene(chambersScreen, transition: reveal)
     }
 
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        if item.tag == 2004  {
+            if(activeTab != 2004){
+              self.dashboardContentView.isHidden =  !self.dashboardContentView.isHidden
+                let scene = AboutGameScene(size: CGSize(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+                
+                scene.scaleMode  = .fill
+                tabContentView?.presentScene(scene)
+            }else{
+                  self.dashboardContentView.isHidden =  !self.dashboardContentView.isHidden
+                  self.tabContentView.isHidden = !self.tabContentView.isHidden
+            }
+        }else if item.tag == 2005 {
+            if(activeTab != 2005){
+                  self.dashboardContentView.isHidden =  !self.dashboardContentView.isHidden
+            let scene = SettingsScene(size: CGSize(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+            
+            scene.scaleMode  = .fill
+            tabContentView?.presentScene(scene)
+        }else{
+                  self.dashboardContentView.isHidden =  !self.dashboardContentView.isHidden
+            self.tabContentView.isHidden = !self.tabContentView.isHidden
+        }
+        }
+    }
+    
+    
 }

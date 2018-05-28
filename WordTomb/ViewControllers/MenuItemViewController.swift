@@ -25,19 +25,19 @@ class MenuItemViewController: UIViewController{
         case 1001:
             let scene = AboutGameScene(size: CGSize(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
             
-            scene.scaleMode  = .aspectFill
+            scene.scaleMode  = .fill
             skView?.presentScene(scene)
             break
         case 1005:
             let scene = SettingsScene(size: CGSize(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
             
-            scene.scaleMode  = .aspectFill
+            scene.scaleMode  = .fill
             skView?.presentScene(scene)
             break
         default:
             let scene = AboutGameScene(size: CGSize(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
             
-            scene.scaleMode  = .aspectFill
+            scene.scaleMode  = .fill
             skView?.presentScene(scene)
             break
         }

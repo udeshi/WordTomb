@@ -16,8 +16,8 @@
 		0D317F7B209EBBF60004E560 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D317F7A209EBBF60004E560 /* Assets.xcassets */; };
 		0D317F7E209EBBF60004E560 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D317F7C209EBBF60004E560 /* LaunchScreen.storyboard */; };
 		0D317F86209EBC580004E560 /* LoginScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D317F85209EBC580004E560 /* LoginScene.swift */; };
+		0D3F46AA20BAF5220077760F /* AboutGame.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D5FB8B920BA840E0036968F /* AboutGame.xib */; };
 		0D5FB8B620BA83D40036968F /* AboutGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5FB8B520BA83D30036968F /* AboutGame.swift */; };
-		0D5FB8B820BA83EC0036968F /* AboutGame.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D5FB8B720BA83EC0036968F /* AboutGame.xib */; };
 		0D5FB8BB20BABE5F0036968F /* AboutGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5FB8BA20BABE5F0036968F /* AboutGameScene.swift */; };
 		0D63CC6D20A0644A00A4DE2A /* UserDefaultsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D63CC6C20A0644A00A4DE2A /* UserDefaultsHandler.swift */; };
 		0D6552A2209EC663008146B5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6552A1209EC663008146B5 /* LoginViewController.swift */; };
@@ -33,6 +33,11 @@
 		0D7E7676209F3D9C003E6958 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7E7675209F3D9C003E6958 /* DashboardViewController.swift */; };
 		0D7E7679209F4A30003E6958 /* HamburgerMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D7E7678209F4A30003E6958 /* HamburgerMenu.xib */; };
 		0D7E767B209F4A59003E6958 /* HamburgerMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7E767A209F4A59003E6958 /* HamburgerMenu.swift */; };
+		0D7F44C820BB7A4500202030 /* MarksUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7F44C620BB7A4500202030 /* MarksUITableViewCell.swift */; };
+		0D7F44C920BB7A4500202030 /* MarksUITableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D7F44C720BB7A4500202030 /* MarksUITableViewCell.xib */; };
+		0D7F44CB20BB7F2A00202030 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7F44CA20BB7F2A00202030 /* UserProfileViewController.swift */; };
+		0D7F44CE20BB83DB00202030 /* MarksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7F44CC20BB83DB00202030 /* MarksCollectionViewCell.swift */; };
+		0D7F44CF20BB83DB00202030 /* MarksCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D7F44CD20BB83DB00202030 /* MarksCollectionViewCell.xib */; };
 		0D8432C720B1321000870EEC /* ChambersScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8432C620B1321000870EEC /* ChambersScene.swift */; };
 		0D872B5120B9A6D700A003FB /* SettingsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D872B5020B9A6D700A003FB /* SettingsScene.swift */; };
 		0D872B5320B9AA6700A003FB /* Settings.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D872B5220B9AA6700A003FB /* Settings.xib */; };
@@ -81,7 +86,6 @@
 		0D317F7F209EBBF60004E560 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D317F85209EBC580004E560 /* LoginScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginScene.swift; path = "../New Group/LoginScene.swift"; sourceTree = "<group>"; };
 		0D5FB8B520BA83D30036968F /* AboutGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutGame.swift; sourceTree = "<group>"; };
-		0D5FB8B720BA83EC0036968F /* AboutGame.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutGame.xib; sourceTree = "<group>"; };
 		0D5FB8B920BA840E0036968F /* AboutGame.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutGame.xib; sourceTree = "<group>"; };
 		0D5FB8BA20BABE5F0036968F /* AboutGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutGameScene.swift; sourceTree = "<group>"; };
 		0D63CC6C20A0644A00A4DE2A /* UserDefaultsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHandler.swift; sourceTree = "<group>"; };
@@ -98,6 +102,11 @@
 		0D7E7675209F3D9C003E6958 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		0D7E7678209F4A30003E6958 /* HamburgerMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HamburgerMenu.xib; sourceTree = "<group>"; };
 		0D7E767A209F4A59003E6958 /* HamburgerMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerMenu.swift; sourceTree = "<group>"; };
+		0D7F44C620BB7A4500202030 /* MarksUITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarksUITableViewCell.swift; sourceTree = "<group>"; };
+		0D7F44C720BB7A4500202030 /* MarksUITableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarksUITableViewCell.xib; sourceTree = "<group>"; };
+		0D7F44CA20BB7F2A00202030 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		0D7F44CC20BB83DB00202030 /* MarksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarksCollectionViewCell.swift; sourceTree = "<group>"; };
+		0D7F44CD20BB83DB00202030 /* MarksCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarksCollectionViewCell.xib; sourceTree = "<group>"; };
 		0D8432C620B1321000870EEC /* ChambersScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChambersScene.swift; sourceTree = "<group>"; };
 		0D872B5020B9A6D700A003FB /* SettingsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScene.swift; sourceTree = "<group>"; };
 		0D872B5220B9AA6700A003FB /* Settings.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Settings.xib; sourceTree = "<group>"; };
@@ -147,7 +156,6 @@
 		0D317F61209EBBF30004E560 = {
 			isa = PBXGroup;
 			children = (
-				0D5FB8B720BA83EC0036968F /* AboutGame.xib */,
 				0D317F6C209EBBF50004E560 /* WordTomb */,
 				0D317F6B209EBBF50004E560 /* Products */,
 			);
@@ -221,6 +229,7 @@
 				0DA0D0A620ABAF980014EC9E /* MenuViewController.swift */,
 				0D317F75209EBBF60004E560 /* GameViewController.swift */,
 				0DD4C05020ACFE1E00657830 /* MenuItemViewController.swift */,
+				0D7F44CA20BB7F2A00202030 /* UserProfileViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -267,6 +276,10 @@
 				0DAF221A20A802A5001A9F98 /* DashboardCustomTableViewCell.swift */,
 				0D70DAB320BA621B0016E542 /* GameLettersTableViewCell.swift */,
 				0D70DAB420BA621B0016E542 /* GameLettersTableViewCell.xib */,
+				0D7F44C620BB7A4500202030 /* MarksUITableViewCell.swift */,
+				0D7F44C720BB7A4500202030 /* MarksUITableViewCell.xib */,
+				0D7F44CC20BB83DB00202030 /* MarksCollectionViewCell.swift */,
+				0D7F44CD20BB83DB00202030 /* MarksCollectionViewCell.xib */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -360,6 +373,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D7F44C920BB7A4500202030 /* MarksUITableViewCell.xib in Resources */,
+				0D7F44CF20BB83DB00202030 /* MarksCollectionViewCell.xib in Resources */,
 				0D70DAB620BA621B0016E542 /* GameLettersTableViewCell.xib in Resources */,
 				0D317F79209EBBF60004E560 /* Main.storyboard in Resources */,
 				0D317F70209EBBF60004E560 /* GameScene.sks in Resources */,
@@ -369,7 +384,7 @@
 				0D317F72209EBBF60004E560 /* Actions.sks in Resources */,
 				0D872B5320B9AA6700A003FB /* Settings.xib in Resources */,
 				0DAF222720A868FE001A9F98 /* Game.xib in Resources */,
-				0D5FB8B820BA83EC0036968F /* AboutGame.xib in Resources */,
+				0D3F46AA20BAF5220077760F /* AboutGame.xib in Resources */,
 				0DAF221D20A853F1001A9F98 /* Chambers.xib in Resources */,
 				0D7E7679209F4A30003E6958 /* HamburgerMenu.xib in Resources */,
 				0D6A829420A7388E002F2BBB /* Category.json in Resources */,
@@ -412,6 +427,7 @@
 				0D317F74209EBBF60004E560 /* GameScene.swift in Sources */,
 				461E543520AD3AB1006659EF /* Level+CoreDataClass.swift in Sources */,
 				0DAF222120A85F5E001A9F98 /* Chambers.swift in Sources */,
+				0D7F44C820BB7A4500202030 /* MarksUITableViewCell.swift in Sources */,
 				461E543A20AD3AB1006659EF /* User+CoreDataProperties.swift in Sources */,
 				0D5FB8BB20BABE5F0036968F /* AboutGameScene.swift in Sources */,
 				0DAF221B20A802A5001A9F98 /* DashboardCustomTableViewCell.swift in Sources */,
@@ -428,7 +444,9 @@
 				461E543120AD3AB1006659EF /* User_Category+CoreDataClass.swift in Sources */,
 				0D317F6E209EBBF60004E560 /* AppDelegate.swift in Sources */,
 				0DAF222320A868BA001A9F98 /* GameViewScene.swift in Sources */,
+				0D7F44CE20BB83DB00202030 /* MarksCollectionViewCell.swift in Sources */,
 				0D63CC6D20A0644A00A4DE2A /* UserDefaultsHandler.swift in Sources */,
+				0D7F44CB20BB7F2A00202030 /* UserProfileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

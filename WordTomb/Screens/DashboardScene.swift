@@ -12,7 +12,7 @@ import SpriteKit
 class DashboardScene: SKScene {
     
     override func didMove(to view: SKView) {
-        let background = SKSpriteNode(imageNamed: "authScreenBackgroundImage.jpg")
+        let background = SKSpriteNode(imageNamed: "dashboardBackground.jpg")
         background.position = CGPoint(x:size.width/2, y:size.height/2)
         background.size = view.frame.size
         addChild(background)
