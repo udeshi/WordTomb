@@ -41,6 +41,8 @@ class Game: UIView {
             creatGridArray()
             createViewArray()
             loadTilesToGrid()
+            loadQuestionsToTable()
+            loadLettersToStackView()
         }
     }
     

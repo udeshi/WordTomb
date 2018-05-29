@@ -20,13 +20,9 @@
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YKF-qC-Xf6">
                     <rect key="frame" x="0.0" y="20" width="647" height="843"/>
                     <subviews>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="85a-Zr-oxD">
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2cU-mD-O73">
                             <rect key="frame" x="0.0" y="0.0" width="150" height="843"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="150" id="vZB-WS-QqJ"/>
-                            </constraints>
-                        </tableView>
+                        </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jci-Yg-oS0">
                             <rect key="frame" x="160" y="0.0" width="487" height="843"/>
                             <subviews>
@@ -34,26 +30,17 @@
                                     <rect key="frame" x="0.0" y="0.0" width="487" height="543"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
-                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h86-EF-Rud">
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="oVv-53-I6i">
                                     <rect key="frame" x="0.0" y="543" width="487" height="300"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="300" id="vHe-GB-f3u"/>
+                                        <constraint firstAttribute="height" constant="300" id="D6k-3W-Pqb"/>
                                     </constraints>
-                                </tableView>
+                                </stackView>
                             </subviews>
-                            <constraints>
-                                <constraint firstItem="h86-EF-Rud" firstAttribute="bottom" secondItem="jci-Yg-oS0" secondAttribute="bottomMargin" id="EUk-Bn-zNI"/>
-                                <constraint firstItem="h86-EF-Rud" firstAttribute="trailing" secondItem="jci-Yg-oS0" secondAttribute="trailingMargin" id="UnR-Ni-6cN"/>
-                                <constraint firstItem="h86-EF-Rud" firstAttribute="leading" secondItem="jci-Yg-oS0" secondAttribute="leadingMargin" id="jLM-iV-cNB"/>
-                                <constraint firstItem="h86-EF-Rud" firstAttribute="top" secondItem="OxK-OU-PML" secondAttribute="bottom" id="niO-uu-GAM"/>
-                            </constraints>
                         </stackView>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="85a-Zr-oxD" firstAttribute="leading" secondItem="YKF-qC-Xf6" secondAttribute="leadingMargin" id="CUP-k7-ZdE"/>
-                        <constraint firstItem="85a-Zr-oxD" firstAttribute="top" secondItem="YKF-qC-Xf6" secondAttribute="topMargin" id="LFH-rd-xCJ"/>
-                        <constraint firstItem="85a-Zr-oxD" firstAttribute="bottom" secondItem="YKF-qC-Xf6" secondAttribute="bottomMargin" id="fdH-0V-7Iz"/>
+                        <constraint firstAttribute="trailing" secondItem="2cU-mD-O73" secondAttribute="trailing" constant="497" id="H81-Px-hnN"/>
                     </constraints>
                 </stackView>
             </subviews>
@@ -68,7 +55,8 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="gridContainerView" destination="OxK-OU-PML" id="yFb-n2-kkb"/>
-                <outlet property="lettersTableView" destination="85a-Zr-oxD" id="egW-a2-Vrl"/>
+                <outlet property="letterStakView" destination="2cU-mD-O73" id="CA4-3P-8QC"/>
+                <outlet property="questionStackView" destination="oVv-53-I6i" id="8O6-Lk-3fC"/>
             </connections>
             <point key="canvasLocation" x="-108.5" y="31.5"/>
         </view>
