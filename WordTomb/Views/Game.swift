@@ -47,9 +47,9 @@ class Game: UIView {
     }
     
     func initiliaze(){
-        let categoryType = UserDefaultsHandler().getData(key: "selectedCategoryId")
-           let selectedLevel = UserDefaultsHandler().getData(key: "selectedLevel")
-        sugesstions = CoreDataHandler.fetchQuestions(level: Int(selectedLevel)!, type: Int(categoryType)!)
+        //let categoryType = UserDefaultsHandler().getData(key: "selectedCategoryId")
+          // let selectedLevel = UserDefaultsHandler().getData(key: "selectedLevel")
+        sugesstions = CoreDataHandler.fetchQuestions(level: Int(1), type: Int(1))
         if(sugesstions.count > 0){
             let randomIndex = Common().getRandomNumber(arrayCount: sugesstions.count)
             let question = sugesstions[randomIndex]
@@ -198,6 +198,8 @@ class Game: UIView {
         mainStack.axis = .vertical
         mainStack.distribution = .fill
         mainStack.spacing = 2
+        mainStack.frame = gridContainerView.bounds
+        mainStack.center = gridContainerView.center
         gridContainerView.addSubview(mainStack)
         
         mainStack.centerXAnchor.constraint(equalTo: gridContainerView.centerXAnchor).isActive = true

@@ -10,19 +10,27 @@ import Foundation
 import SpriteKit
 
 class GameViewScene: SKScene,SceneNavigator {
+    
+    let tile1 : GameTile = GameTile(width: 100, height: 100)
+    
+    
 
     override func didMove(to view: SKView) {
         
-        
+        self.backgroundColor = UIColor.brown
+        let xPosition = (self.view?.frame.size.width)!/2
+        let yPosition = (self.view?.frame.size.height)!/2
+        self.anchorPoint = CGPoint(x:0.5, y:0.5)
+        //self.position = CGPoint(x:size.width/2, y:size.height/2)
         // add sub view
-        let tempView = Bundle.main.loadNibNamed("Game", owner: self, options: nil)?.first as? Game
-        if let tempView = tempView {
-            tempView.sceneNavigator = self
-            view.addSubview(tempView)
-            view.bringSubview(toFront: tempView)
-        }
+//        let tempView = Bundle.main.loadNibNamed("Game", owner: self, options: nil)?.first as? Game
+//        if let tempView = tempView {
+//            tempView.sceneNavigator = self
+//            view.addSubview(tempView)
+//            view.bringSubview(toFront: tempView)
+//        }
         
-    
+        loadAssets()
     }
     
     
@@ -34,5 +42,11 @@ class GameViewScene: SKScene,SceneNavigator {
             
         }
         
+    }
+    
+    fileprivate func loadAssets() {
+        tile1.position = CGPoint(x: 0, y: 0)
+        tile1.zPosition = 100
+        addChild(tile1)
     }
 }

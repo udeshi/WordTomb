@@ -55,6 +55,7 @@
 		0DAF222920A8765E001A9F98 /* CommonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAF222820A8765E001A9F98 /* CommonHelper.swift */; };
 		0DB21F6320BB480400B61664 /* GameQuestionViewLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB21F6220BB480400B61664 /* GameQuestionViewLabel.swift */; };
 		0DB21F6520BB483E00B61664 /* GameLetterViewLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB21F6420BB483E00B61664 /* GameLetterViewLabel.swift */; };
+		0DB3AA5620BEBE5400312958 /* GameTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB3AA5520BEBE5400312958 /* GameTile.swift */; };
 		0DD4C05120ACFE1E00657830 /* MenuItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD4C05020ACFE1E00657830 /* MenuItemViewController.swift */; };
 		0DF31993209FCB27000F43A0 /* WordTomb.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0DF31991209FCB27000F43A0 /* WordTomb.xcdatamodeld */; };
 		0DF319B620A0019C000F43A0 /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF319B520A0019C000F43A0 /* CoreDataHandler.swift */; };
@@ -126,6 +127,7 @@
 		0DAF222820A8765E001A9F98 /* CommonHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonHelper.swift; sourceTree = "<group>"; };
 		0DB21F6220BB480400B61664 /* GameQuestionViewLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameQuestionViewLabel.swift; sourceTree = "<group>"; };
 		0DB21F6420BB483E00B61664 /* GameLetterViewLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLetterViewLabel.swift; sourceTree = "<group>"; };
+		0DB3AA5520BEBE5400312958 /* GameTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTile.swift; sourceTree = "<group>"; };
 		0DD4C05020ACFE1E00657830 /* MenuItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemViewController.swift; sourceTree = "<group>"; };
 		0DF31992209FCB27000F43A0 /* WordTomb.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WordTomb.xcdatamodel; sourceTree = "<group>"; };
 		0DF319B520A0019C000F43A0 /* CoreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 				0D7F44CD20BB83DB00202030 /* MarksCollectionViewCell.xib */,
 				0DB21F6220BB480400B61664 /* GameQuestionViewLabel.swift */,
 				0DB21F6420BB483E00B61664 /* GameLetterViewLabel.swift */,
+				0DB3AA5520BEBE5400312958 /* GameTile.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				0DB21F6520BB483E00B61664 /* GameLetterViewLabel.swift in Sources */,
 				461E543C20AD3AB1006659EF /* Category+CoreDataProperties.swift in Sources */,
 				46E6413620A16C7A00E42796 /* SceneNavigator.swift in Sources */,
+				0DB3AA5620BEBE5400312958 /* GameTile.swift in Sources */,
 				0D7E7674209F3D89003E6958 /* DashboardScene.swift in Sources */,
 				461E543820AD3AB1006659EF /* Question+CoreDataProperties.swift in Sources */,
 				0DF319B620A0019C000F43A0 /* CoreDataHandler.swift in Sources */,
