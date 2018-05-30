@@ -11,6 +11,8 @@ import SpriteKit
 class GameTile:SKShapeNode {
     
     var letter : String!
+    var x : CGFloat!
+    var y : CGFloat!
     var isVerified : Bool = false {
         didSet{
             if isVerified {
@@ -28,7 +30,7 @@ class GameTile:SKShapeNode {
     }
     var letterLabel : SKLabelNode?
     
-    convenience init(width:CGFloat, height:CGFloat) {
+    convenience init(width:CGFloat, height:CGFloat,x:CGFloat,y:CGFloat) {
         let tileFrame = CGRect(x: -width/2, y: -height/2, width: width, height: height)
         self.init(rect: tileFrame)
         self.strokeColor = UIColor.white
