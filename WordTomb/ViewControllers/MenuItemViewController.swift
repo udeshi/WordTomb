@@ -17,7 +17,7 @@ class MenuItemViewController: UIViewController{
     @IBOutlet var contentView: SKView!
     var selectedItemTag = 0
     override func viewDidLoad() {
-        super.viewDidLoad()
+        //super.viewDidLoad()
          print(selectedItemTag)
         let skView = self.contentView
 

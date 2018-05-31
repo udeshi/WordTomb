@@ -119,7 +119,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         
         //navigate to gamelevel
         let reveal = SKTransition.flipHorizontal(withDuration: 1.0)
-        self.dashboardContentView.isHidden = true
+        //self.dashboardContentView.isHidden = true
        // let skView = self.chambers as! SKView
         let chambersScreen = ChambersScene(size: CGSize(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
         

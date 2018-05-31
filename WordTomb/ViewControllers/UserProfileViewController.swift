@@ -22,18 +22,21 @@ class UserProfileViewController: UIViewController , UICollectionViewDelegate, UI
            Record (categoryImageName: "technology",marks: "100", rank:"50601"),
             Record (categoryImageName: "music",marks: "0", rank:"80001"),
              Record (categoryImageName: "movies",marks: "160", rank:"14501"),
-              Record (categoryImageName: "underwater",marks: "700", rank:"7001"),]
+              Record (categoryImageName: "underwater",marks: "700", rank:"7001")]
     
    
     
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-collectionView.dataSource = self
+        collectionView.dataSource = self
         collectionView.delegate = self
+        
+        collectionView.register(UINib(nibName: "MarksCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "collectionViewCell")
+        
 
         //set profile image
- var userDetails: UserDetails? = nil
+        var userDetails: UserDetails? = nil
         userDetails = UserDefaultsHandler().getOtherData(key: "Session") as? UserDetails
         let image =   (userDetails != nil && (userDetails?.profileImageUrl) != "") ? UIImage(contentsOfFile: (userDetails?.profileImageUrl)!) : UIImage(named:"userIcon.png")
         userIcon.image = image
