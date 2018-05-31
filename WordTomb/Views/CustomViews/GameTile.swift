@@ -39,6 +39,8 @@ class GameTile:SKShapeNode {
         self.lineWidth = 5
         self.letterLabel = SKLabelNode(fontNamed:"Chalkboard SE")
         self.letterLabel?.fontSize = 50
+        self.letterLabel?.horizontalAlignmentMode = .center
+        self.letterLabel?.verticalAlignmentMode = .center
         self.letterLabel?.text = ""
         self.letterLabel?.fontColor = UIColor.white
         self.addChild(letterLabel!)

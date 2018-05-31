@@ -65,8 +65,8 @@ class Game: UIView {
         var letters = Array((gameQuestions[comparedWith]).answer!)
         print("letters bef ", letters)
         let PreviousMatch = randomIndexes.last!["letter"] as! Character
-       letters = letters.filter{$0 != PreviousMatch}
-          print("letters af ", letters)
+        letters = letters.filter{$0 != PreviousMatch}
+        print("letters af ", letters)
         insertToArray(letters: letters)
         var unLetters = Set<Character>()
         unLetters = unLetters.union(letters)

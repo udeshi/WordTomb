@@ -24,13 +24,14 @@ class GameViewScene: SKScene,SceneNavigator {
     let MAX_GRID_TILES = 10
     let LetterTileWidth : CGFloat  = 75
     let LetterTileHeight : CGFloat = 75
-    var gridMap = [[Int]]()
+    var gridMap = [[Character]]()
     var viewArray : [[UIView]] = []
     var puzzelStartX : CGFloat = -100
     var puzzelStartY : CGFloat = 450
     var letterStartX : CGFloat = -350
-    var letterStartY : CGFloat = 500
+    var letterStartY : CGFloat = 350
     var activeNode :  GameTile!
+    var backButton : GameTile!
     
 
     override func didMove(to view: SKView) {
@@ -41,10 +42,16 @@ class GameViewScene: SKScene,SceneNavigator {
               creatGridArray()
               createViewArray()
              loadLetters()
+            loadQuestions()
+            backButton = GameTile(width: 100, height: 40, x: -350, y: 460)
+            backButton.letterLabel?.text = "Back"
+            backButton.position = CGPoint(x: -350, y : 480)
+            backButton.letterLabel?.fontSize = 20
+            backButton.letterLabel?.horizontalAlignmentMode = .center
+            addChild(backButton)
             //width : 834.0
             //height : 1112.0
         }
-        loadAssets()
     }
     
     
@@ -58,12 +65,6 @@ class GameViewScene: SKScene,SceneNavigator {
         
     }
     
-    fileprivate func loadAssets() {
-        //tile1.position = CGPoint(x: 0, y: 0)
-        //tile1.zPosition = 100
-        //addChild(tile1)
-    }
-    
     func initiliaze(){
         //let categoryType = UserDefaultsHandler().getData(key: "selectedCategoryId")
         // let selectedLevel = UserDefaultsHandler().getData(key: "selectedLevel")
@@ -71,9 +72,10 @@ class GameViewScene: SKScene,SceneNavigator {
         if(sugesstions.count > 0){
             let randomIndex = Common().getRandomNumber(arrayCount: sugesstions.count)
             let question = sugesstions[randomIndex]
-            print(question.answer)
             randomIndexes.append(["index" : 0, "letter" : Array(question.answer!)[0]])
             gameQuestions.append(question)
+            let letters = Array(question.answer!)
+            insertToArray(letters: letters)
             sugesstions.remove(at: Int(randomIndex))
             getOtherQuestions(comparedWith: 0)
         }
@@ -152,7 +154,7 @@ class GameViewScene: SKScene,SceneNavigator {
     fileprivate func creatGridArray(){
         let maxGridVal = gameQuestions.max{($0.answer!.count < $1.answer!.count)}
         _ = (maxGridVal?.answer?.count)! + 1
-        gridMap = Array(repeating: Array(repeating:0, count: MAX_GRID_TILES),count:MAX_GRID_TILES)
+        gridMap = Array(repeating: Array(repeating:"0", count: MAX_GRID_TILES),count:MAX_GRID_TILES)
         for questionIndex in 0...gameQuestions.count-1{
             let randIndex = randomIndexes[questionIndex]["index"] as! Int
             var startingIndex = 0
@@ -168,18 +170,20 @@ class GameViewScene: SKScene,SceneNavigator {
             print(gameQuestions[questionIndex].answer!)
             if(questionIndex%2==0){
                 print("even",gameQuestions[questionIndex].answer)
+                var charArray = Array(gameQuestions[questionIndex].answer!)
                 for x in startingIndex...Array(gameQuestions[questionIndex].answer!).count-1{
                     //gridMap[questionIndex].insert(1, at: x)
-                    gridMap[randIndex][x] = 1
+                    gridMap[randIndex][x] = charArray[x]
                 }
                 print("=====================")
                 print(gridMap)
             }else{
                 //startingIndex=startingIndex+1
                 print("odd",gameQuestions[questionIndex].answer!)
+                var charArray = Array(gameQuestions[questionIndex].answer!)
                 for i in startingIndex...Array(gameQuestions[questionIndex].answer!).count-1{
                     // for x in 0...Array(gameQuestions[questionIndex].answer!).count-1{
-                    gridMap[i][startingIndex+1] = 1
+                    gridMap[i][startingIndex+1] = charArray[i]
                     // }
                     
                 }
@@ -199,29 +203,28 @@ class GameViewScene: SKScene,SceneNavigator {
     fileprivate func createViewArray() {
         for r in gridMap {
             for c in r {
-                let tile = getTile(forNumber: c)
+                let tile = getTile(forCharacter: c)
                 puzzelStartX = puzzelStartX+110
                 
                 addChild(tile)
             }
-            //print("x ",puzzelStartX," ================ y ",puzzelStartY)
             puzzelStartY = puzzelStartY-110
             puzzelStartX = -100
         }
        
     }
     
-    fileprivate func getTile(forNumber number : Int) -> GameTile {
+    fileprivate func getTile(forCharacter character : Character) -> GameTile {
         let tile = GameTile(width: 100, height: 100, x:puzzelStartX, y:puzzelStartY)
         tile.position = CGPoint(x: puzzelStartX , y: puzzelStartY)
         tile.zPosition = 100
         
-        if number == 0 {
+        if character == "0" {
             tile.bodrderColor = UIColor.clear
             tile.fillColor = UIColor.clear
         }else{
+            tile.letter = String(character)
             puzzleTiles.append(tile)
-            print(puzzelStartX,"=============== y ",puzzelStartY)
         }
         
         return tile
@@ -244,26 +247,44 @@ class GameViewScene: SKScene,SceneNavigator {
             }
     }
     
+    fileprivate func loadQuestions(){
+        
+        let xstart : CGFloat =  -100
+        var ystart : CGFloat =  -150
+        
+        for question in gameQuestions {
+            let questionTile = GameQuestionTile(width: 500, height: 100)
+            questionTile.position = CGPoint(x: xstart , y: ystart)
+            questionTile.questionLabel?.text = question.clue
+            addChild(questionTile)
+            ystart = ystart - 105
+        }
+        
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches,with: event)
         if let touch = touches.first{
             let point =  touch.location(in: self)
-            for tile in uniqueTiles{
-                if tile.x...tile.x+100 ~= point.x
-                    && tile.y...tile.y+100 ~= point.y{
-                     let tempActiveNode = GameTile(width:tile.frame.width, height:tile.frame.height
-                        , x:tile.x, y: tile.y)
-                    tempActiveNode.position = point
-                    tempActiveNode.zPosition = 100
-                    tempActiveNode.letterLabel?.text = tile.letter
-                    tempActiveNode.letter = tile.letter
-                    tempActiveNode.initialPostion = point
-                    addChild(tempActiveNode)
-                    activeNode = tempActiveNode
-                    break
+            if backButton.contains(point) {
+                print("Back button pressed")
+            }else{
+                for tile in uniqueTiles{
+                    if tile.contains(point){
+                        let tempActiveNode =
+                            GameTile(width:tile.frame.width, height:tile.frame.height
+                            , x:tile.x, y: tile.y)
+                        tempActiveNode.position = point
+                        tempActiveNode.zPosition = 100
+                        tempActiveNode.letterLabel?.text = tile.letter
+                        tempActiveNode.letter = tile.letter
+                        tempActiveNode.initialPostion = point
+                        addChild(tempActiveNode)
+                        activeNode = tempActiveNode
+                        break
+                    }
                 }
             }
-            
         }
     }
     
@@ -279,29 +300,29 @@ class GameViewScene: SKScene,SceneNavigator {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if activeNode != nil {
-            var isFoundCorretTile:Bool = false
-            for tile in puzzleTiles {
-                print("tilexy",tile.x,tile.y,"activenodexy",activeNode.position.x,activeNode.position.y)
-                if tile.x...tile.x+100 ~= activeNode.position.x
-                    && tile.y...tile.y+100 ~= activeNode.position.y{
-                    tile.letterLabel?.text = activeNode.letter
-                    tile.letter = activeNode.letter
-                    isFoundCorretTile = true;
-                    activeNode.bodrderColor = UIColor.green
-                    break
+            if let touch = touches.first{
+                let point =  touch.location(in: self)
+                var isFoundCorretTile:Bool = false
+                for tile in puzzleTiles {
+                    if tile.contains(point) && tile.letter == activeNode.letter{
+                        tile.letterLabel?.text = activeNode.letter
+                        tile.letter = activeNode.letter
+                        isFoundCorretTile = true;
+                        tile.isVerified = true
+                        activeNode.bodrderColor = UIColor.green
+                        break
+                    }
                 }
-            }
-            
-            if isFoundCorretTile {
                 
+                if !isFoundCorretTile {
+                    activeNode.bodrderColor = UIColor.red
+                    activeNode.letterLabel?.fontColor = UIColor.red
+                }
+                let action = SKAction.move(to:activeNode.initialPostion, duration : 5.0)
+                activeNode.run(action)
+                activeNode.removeFromParent()
+                activeNode = nil
             }
-            else{
-                
-            }
-            let action = SKAction.move(to:activeNode.initialPostion, duration : 5.0)
-            activeNode.run(action)
-            activeNode.removeFromParent()
-            activeNode = nil
         }
     }
 }
