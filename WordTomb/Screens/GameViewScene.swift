@@ -22,13 +22,16 @@ class GameViewScene: SKScene,SceneNavigator {
     let TILE_WIDTH : CGFloat = 70
     let TILE_HEIGHT : CGFloat = 70
     let MAX_GRID_TILES = 10
+    let LetterTileWidth : CGFloat  = 75
+    let LetterTileHeight : CGFloat = 75
     var gridMap = [[Int]]()
     var viewArray : [[UIView]] = []
     var puzzelStartX : CGFloat = -100
     var puzzelStartY : CGFloat = 450
-    var letterStartX : CGFloat = -445
-    var letterStartY : CGFloat = 560
+    var letterStartX : CGFloat = -350
+    var letterStartY : CGFloat = 500
     var activeNode :  GameTile!
+    
 
     override func didMove(to view: SKView) {
         self.backgroundColor = UIColor.brown
@@ -228,18 +231,14 @@ class GameViewScene: SKScene,SceneNavigator {
             var iterator = 0;
             print(uniqueLetters,"loadletter")
             for letter in uniqueLetters {
-                letterStartX = letterStartX + 110
-                if iterator%2  == 0 {
-                    letterStartY =  letterStartY - 110
-                    letterStartX =  -325
-                }
-                let tile = GameTile(width: 100, height: 100, x:letterStartX, y:letterStartY)
+                let tile = GameTile(width: LetterTileWidth, height: LetterTileHeight, x:letterStartX, y:letterStartY)
                 tile.position = CGPoint(x: letterStartX , y: letterStartY)
                 tile.zPosition = 100
                 tile.letter =  String(letter)
                 tile.letterLabel?.text = tile.letter;
                 addChild(tile)
                 uniqueTiles.append(tile)
+                letterStartY =  letterStartY - 85
                 iterator = iterator+1
                 
             }
@@ -252,8 +251,15 @@ class GameViewScene: SKScene,SceneNavigator {
             for tile in uniqueTiles{
                 if tile.x...tile.x+100 ~= point.x
                     && tile.y...tile.y+100 ~= point.y{
-                    activeNode = tile
-                    print("user touches ===",activeNode.letter)
+                     let tempActiveNode = GameTile(width:tile.frame.width, height:tile.frame.height
+                        , x:tile.x, y: tile.y)
+                    tempActiveNode.position = point
+                    tempActiveNode.zPosition = 100
+                    tempActiveNode.letterLabel?.text = tile.letter
+                    tempActiveNode.letter = tile.letter
+                    tempActiveNode.initialPostion = point
+                    addChild(tempActiveNode)
+                    activeNode = tempActiveNode
                     break
                 }
             }
@@ -264,7 +270,38 @@ class GameViewScene: SKScene,SceneNavigator {
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first{
             let point =  touch.location(in: self)
-            let action = SKAction.move(by: , duration: 2)
+            if activeNode != nil {
+                activeNode.position = point
+            }
+
+        }
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if activeNode != nil {
+            var isFoundCorretTile:Bool = false
+            for tile in puzzleTiles {
+                print("tilexy",tile.x,tile.y,"activenodexy",activeNode.position.x,activeNode.position.y)
+                if tile.x...tile.x+100 ~= activeNode.position.x
+                    && tile.y...tile.y+100 ~= activeNode.position.y{
+                    tile.letterLabel?.text = activeNode.letter
+                    tile.letter = activeNode.letter
+                    isFoundCorretTile = true;
+                    activeNode.bodrderColor = UIColor.green
+                    break
+                }
+            }
+            
+            if isFoundCorretTile {
+                
+            }
+            else{
+                
+            }
+            let action = SKAction.move(to:activeNode.initialPostion, duration : 5.0)
+            activeNode.run(action)
+            activeNode.removeFromParent()
+            activeNode = nil
         }
     }
 }

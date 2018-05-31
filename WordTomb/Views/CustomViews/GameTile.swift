@@ -29,6 +29,7 @@ class GameTile:SKShapeNode {
         }
     }
     var letterLabel : SKLabelNode?
+    var initialPostion : CGPoint!
     
     convenience init(width:CGFloat, height:CGFloat,x:CGFloat,y:CGFloat) {
         let tileFrame = CGRect(x: -width/2, y: -height/2, width: width, height: height)
