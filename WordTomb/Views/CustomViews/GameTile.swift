@@ -41,6 +41,8 @@ class GameTile:SKShapeNode {
         self.letterLabel?.text = ""
         self.letterLabel?.fontColor = UIColor.white
         self.addChild(letterLabel!)
+        self.x =  x
+        self.y = y 
     
     }
     
