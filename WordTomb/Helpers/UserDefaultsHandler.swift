@@ -17,6 +17,7 @@ class  UserDefaultsHandler{
 //        history.append(data)
         defaults.set(data, forKey: key)
     }
+
     
     func getBoolData(key:String)->Bool{
         let value =  defaults.bool(forKey: key)
@@ -26,6 +27,11 @@ class  UserDefaultsHandler{
     func getData(key:String) -> String{
         let value =  defaults.string(forKey: key)
         return value!
+    }
+    
+    func getOtherData(key:String) -> Any?{
+        let value =  defaults.string(forKey: key)
+        return value
     }
     
     func removeUserdefaults(key:String){

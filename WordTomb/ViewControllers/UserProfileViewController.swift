@@ -9,19 +9,20 @@
 import UIKit
 
 class UserProfileViewController: UIViewController , UICollectionViewDelegate, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
- let picker = UIImagePickerController()
+    @IBOutlet weak var userIcon: UIImageView!
+    let picker = UIImagePickerController() // for image upload
     struct Record {
-        var categoryImageName: String!
-        var marks: Int!
-        var rank: Int!
+        var categoryImageName: String
+        var marks: String
+        var rank: String
     }
     var historyRecords = [
-        Record (categoryImageName: "animals",marks: 400, rank:10001),
-          Record (categoryImageName: "sports",marks: 100, rank:30641),
-           Record (categoryImageName: "technology",marks: 100, rank:50601),
-            Record (categoryImageName: "music",marks: 0, rank:80001),
-             Record (categoryImageName: "movies",marks: 160, rank:14501),
-              Record (categoryImageName: "underwater",marks: 700, rank:7001),]
+        Record (categoryImageName: "animals",marks: "400", rank:"10001"),
+          Record (categoryImageName: "sports",marks: "100", rank:"30641"),
+           Record (categoryImageName: "technology",marks: "100", rank:"50601"),
+            Record (categoryImageName: "music",marks: "0", rank:"80001"),
+             Record (categoryImageName: "movies",marks: "160", rank:"14501"),
+              Record (categoryImageName: "underwater",marks: "700", rank:"7001"),]
     
    
     
@@ -30,7 +31,12 @@ class UserProfileViewController: UIViewController , UICollectionViewDelegate, UI
         super.viewDidLoad()
 collectionView.dataSource = self
         collectionView.delegate = self
-        // Do any additional setup after loading the view.
+
+        //set profile image
+ var userDetails: UserDetails? = nil
+        userDetails = UserDefaultsHandler().getOtherData(key: "Session") as? UserDetails
+        let image =   (userDetails != nil && (userDetails?.profileImageUrl) != "") ? UIImage(contentsOfFile: (userDetails?.profileImageUrl)!) : UIImage(named:"userIcon.png")
+        userIcon.image = image
         
         picker.delegate = self
     }
@@ -53,12 +59,15 @@ collectionView.dataSource = self
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCell", for: indexPath) as! MarksCollectionViewCell
         
         cell.categoryImage = UIImageView (image: UIImage(named: historyRecords[indexPath.section].categoryImageName))
-        cell.userMarks.text = String( historyRecords[indexPath.section].marks)
-        cell.userRanking.text = String(historyRecords[indexPath.section].rank)
+//        let marks = historyRecords[indexPath.section].marks
+//              cell.userRanking.text = historyRecords[indexPath.section].rank
+//        cell.userMarks.text = "400"
+//        
+  
         return cell
     }
     @IBAction func uploadImage(_ sender: UIButton) {
-        picker.allowsEditing = false
+        picker.allowsEditing = true
         present(picker, animated: true)
     }
     
@@ -66,9 +75,17 @@ collectionView.dataSource = self
         guard (info[UIImagePickerControllerEditedImage] as? UIImage) != nil else {return}
         let imageName = UUID().uuidString
         let imagePath = getDocumentsDirectory().appendingPathComponent(imageName)
-//        if let jpegData = UIImageJPEGRepresentation(image,80){
-//            try? jpegData
-//        }
+
+        print(imagePath)
+        var userDetails: UserDetails? = nil
+        userDetails = UserDefaultsHandler().getOtherData(key: "Session") as? UserDetails
+        if(userDetails != nil) {
+            CoreDataHandler.updateUserProfile(profilePath: imagePath.path, userId: (userDetails?.id)!)
+        
+            userDetails?.profileImageUrl = imagePath.path
+         userIcon.image = UIImage(contentsOfFile: imagePath.path)
+        UserDefaultsHandler().save(data: userDetails!, key: "Session")
+        }
         dismiss(animated: true, completion: nil)
     }
     

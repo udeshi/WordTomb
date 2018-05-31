@@ -18,13 +18,13 @@
             <rect key="frame" x="0.0" y="0.0" width="952" height="1126"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageView:9JW-cg-23t:image" translatesAutoresizingMaskIntoConstraints="NO" id="9JW-cg-23t">
-                    <rect key="frame" x="0.0" y="20" width="952" height="1106"/>
-                </imageView>
                 <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="prI-wx-sEd">
                     <rect key="frame" x="150" y="170" width="652" height="806"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageView:9JW-cg-23t:image" translatesAutoresizingMaskIntoConstraints="NO" id="9JW-cg-23t">
+                    <rect key="frame" x="0.0" y="20" width="952" height="1106"/>
+                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g8B-4s-2vc">
                     <rect key="frame" x="0.0" y="20" width="952" height="1106"/>
                     <subviews>

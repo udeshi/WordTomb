@@ -28,8 +28,14 @@ class SignupViewController: UIViewController {
     }
 
     @IBAction func signupBtnClicked(_ sender: Any) {
-        if (CoreDataHandler.saveUserDetails(userName: "user1", email: "user@123", password: "123456")){
-            UserDefaultsHandler().save(data: userName.text,key: "Session")
+        let userId = CoreDataHandler.saveUserDetails(userName: "user1", email: "user@123", password: "123456")
+        if (userId > 0){
+            let user: User = User()
+            user.id = Int32(userId)
+            user.userName = "user1";
+            user.email = email.text;
+            
+            UserDefaultsHandler().save(data: user,key: "Session")
             
             sceneNavigator?.navigateToScene(screenName: "Dashboard")
         }else{

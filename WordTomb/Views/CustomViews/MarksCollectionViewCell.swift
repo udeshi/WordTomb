@@ -9,6 +9,7 @@
 import UIKit
 
 class MarksCollectionViewCell: UICollectionViewCell {
+  
     @IBOutlet weak var userMarks: UILabel!
     
     @IBOutlet weak var userRanking: UILabel!

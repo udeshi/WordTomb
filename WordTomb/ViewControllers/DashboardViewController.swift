@@ -30,6 +30,8 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         tableView.dataSource = self
         tabBar.delegate = self
         setUserProfileImageInNavBar()
+        tabBar.items![0].image = UIImage(named: "aboutGame")?.withRenderingMode(.alwaysOriginal)
+        tabBar.items![1].image = UIImage(named: "settings")?.withRenderingMode(.alwaysOriginal)
         
         let skView = self.dashboardContentView
         let scene = DashboardScene(size: CGSize(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
@@ -43,12 +45,15 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func setUserProfileImageInNavBar(){
         let button: UIButton = UIButton.init(type: .custom)
+        var userDetails: UserDetails? = nil
+        userDetails = UserDefaultsHandler().getOtherData(key: "Session") as? UserDetails
+        let image =   userDetails != nil && userDetails?.profileImageUrl != "" ? UIImage(contentsOfFile: (userDetails?.profileImageUrl)!) : UIImage(named:"userIcon.png")
         //set image for button
-        button.setImage(UIImage(named:"userIcon.png"), for: UIControlState.normal)
+        button.setImage(image, for: UIControlState.normal)
         //add function for button
         button.addTarget(self, action: #selector(DashboardViewController.viewUserProfile), for: UIControlEvents.touchUpInside)
         //set frame
-        button.frame = CGRect(x: 0, y:0,width:10, height:20)
+        button.frame = CGRect(x: 0, y:0,width:10, height:10)
         let barButton = UIBarButtonItem(customView: button)
         //assign button to nav bar
         self.navigationItem.rightBarButtonItem = barButton
@@ -63,6 +68,11 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     
     @objc func viewUserProfile(){
         print("view it")
+        let userDetails = UserDefaultsHandler().getOtherData(key: "Session")
+        if(userDetails != nil) {
+        performSegue(withIdentifier: "UserProfileController_Segue", sender: self)
+        }
+   
     }
     
     
@@ -109,11 +119,11 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         
         //navigate to gamelevel
         let reveal = SKTransition.flipHorizontal(withDuration: 1.0)
-        
+        self.dashboardContentView.isHidden = true
        // let skView = self.chambers as! SKView
         let chambersScreen = ChambersScene(size: CGSize(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
         
-        chambersScreen.scaleMode  = .aspectFill
+        chambersScreen.scaleMode  = .resizeFill
         chambersScreen.size = UIScreen.main.bounds.size
         currentView.presentScene(chambersScreen, transition: reveal)
     }
@@ -122,23 +132,25 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         if item.tag == 2004  {
             if(activeTab != 2004){
               self.dashboardContentView.isHidden =  !self.dashboardContentView.isHidden
+                self.tabContentView.isHidden =  !self.tabContentView.isHidden
                 let scene = AboutGameScene(size: CGSize(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
                 
-                scene.scaleMode  = .fill
+                scene.scaleMode  = .resizeFill
                 tabContentView?.presentScene(scene)
             }else{
-                  self.dashboardContentView.isHidden =  !self.dashboardContentView.isHidden
+                  self.dashboardContentView.isHidden =  false
                   self.tabContentView.isHidden = !self.tabContentView.isHidden
             }
         }else if item.tag == 2005 {
             if(activeTab != 2005){
                   self.dashboardContentView.isHidden =  !self.dashboardContentView.isHidden
+                   self.tabContentView.isHidden =  !self.tabContentView.isHidden
             let scene = SettingsScene(size: CGSize(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
             
-            scene.scaleMode  = .fill
+            scene.scaleMode  = .resizeFill
             tabContentView?.presentScene(scene)
         }else{
-                  self.dashboardContentView.isHidden =  !self.dashboardContentView.isHidden
+                  self.dashboardContentView.isHidden =  false
             self.tabContentView.isHidden = !self.tabContentView.isHidden
         }
         }

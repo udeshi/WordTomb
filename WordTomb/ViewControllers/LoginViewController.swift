@@ -43,7 +43,10 @@ class LoginViewController: UIViewController {
             if(( user ) != nil){
                 print("saved user" + (user?.password)!)
                 user?.password == password.text! ? print("print correct user"): print("try again")
-                UserDefaultsHandler().save(data: (user?.userName)!,key: "Session")
+                let url = user?.profileImageUrl == nil ? "" : user?.profileImageUrl
+                let userdetails = UserDetails(id : (user?.id)!, userName : (user?.userName)!, profileImageUrl: url! , email : (user?.email)!)
+        
+                UserDefaultsHandler().save(data: userdetails,key: "Session")
                 performSegue(withIdentifier: "loginToDashbord",sender: nil)
                 //sceneNavigator?.navigateToScene(screenName: "Dashboard")
             }

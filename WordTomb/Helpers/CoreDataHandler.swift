@@ -100,8 +100,9 @@ class  CoreDataHandler: NSObject {
         let categories = results!["results"] as! [AnyObject]
         print(categories)
         for cat in categories{
-            print(cat)
-            createCategories(dictionary: cat)
+           // print(cat)
+            let details = createCategories(dictionary: cat)
+            print(details!)
         }
         //_ =  categories.map{saveCategories(dictionary: $0)}
         
@@ -115,7 +116,7 @@ class  CoreDataHandler: NSObject {
     }
     
     
-    class func saveUserDetails(userName: String, email: String, password:String) -> Bool{
+    class func saveUserDetails(userName: String, email: String, password:String) -> Int{
         let context = getContext()
         let enitity = NSEntityDescription.entity(forEntityName: "User", in: context)
         let manageObject = NSManagedObject(entity: enitity!, insertInto: context)
@@ -130,10 +131,10 @@ class  CoreDataHandler: NSObject {
         do{
             try context.save()
             print("saved")
-            return true
+            return Int(id)
         }
         catch{
-            return false
+            return 0
         }
     }
     
@@ -183,6 +184,39 @@ class  CoreDataHandler: NSObject {
             return questions
         }catch{
             return questions
+        }
+    }
+    
+    class func updateUserProfile(profilePath: String, userId: Int32){
+        let context = getContext()
+        let request: NSFetchRequest<User> = User.fetchRequest()
+        var user: User? = nil
+        
+        let predicate = NSPredicate(format: "id like[c] %@", userId)
+        request.predicate = predicate
+        
+        do{
+            var userResult = try context.fetch(request)
+            if(userResult.count > 0){
+                user =   userResult[0]
+         
+                if((user) != nil){
+                let enitity = NSEntityDescription.entity(forEntityName: "User", in: context)
+                let manageObject = NSManagedObject(entity: enitity!, insertInto: context)
+            
+                manageObject.setValue(profilePath, forKey: "profileImageUrl")
+                
+                do{
+                    try context.save()
+                }catch{
+                    print("didn't save")
+                }
+                }
+            }
+        
+        }
+        catch{
+      print("try again")
         }
     }
 }

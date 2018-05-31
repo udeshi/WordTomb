@@ -68,7 +68,6 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="gridContainerView" destination="OxK-OU-PML" id="yFb-n2-kkb"/>
-                <outlet property="lettersTableView" destination="85a-Zr-oxD" id="egW-a2-Vrl"/>
             </connections>
             <point key="canvasLocation" x="-108.5" y="31.5"/>
         </view>

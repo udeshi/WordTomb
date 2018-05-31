@@ -22,13 +22,17 @@ class Signup: UIView {
         userName.text = "test"
         password.text = "user@123"
         if(email.text != "" && userName.text != "" && password.text != ""){
-            if (CoreDataHandler.saveUserDetails(userName: userName.text!, email: email.text!, password: password.text! )){
+            let userId = CoreDataHandler.saveUserDetails(userName: userName.text!, email: email.text!, password: password.text!)
+            if (userId > 0){
+                let user = UserDetails(id : Int32(userId), userName : userName.text!, profileImageUrl: "" , email : email.text!)
+                
+                UserDefaultsHandler().save(data: user,key: "Session")
                 sceneNavigator?.navigateToScene(screenName: "Dashboard")
+            }
             }else{
                 print("error")
             }
-        }
-        
+       
     }
     
     @IBAction func guestBtnClicked(_ sender: UIButton) {

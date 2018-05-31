@@ -13,10 +13,10 @@ import SpriteKit
 class ChambersScene: SKScene,SceneNavigator {
     
     override func didMove(to view: SKView) {
-        let background = SKSpriteNode(imageNamed: "chambersBackgroundimage.jpg")
-        background.position = CGPoint(x:size.width/2, y:size.height/2)
-        background.size = view.frame.size
-        addChild(background)
+//        let background = SKSpriteNode(imageNamed: "chambersBackgroundimage.jpg")
+//        background.position = CGPoint(x:size.width/2, y:size.height/2)
+//        background.size = view.frame.size
+//        addChild(background)
         
         // add sub view
         let tempView = Bundle.main.loadNibNamed("Chambers", owner: self, options: nil)?.first as? Chambers
