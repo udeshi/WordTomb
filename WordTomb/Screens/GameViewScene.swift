@@ -12,9 +12,9 @@ import UIKit
 
 class GameViewScene: SKScene,SceneNavigator,Alertable {
     
-    //let tile1 : GameTile = GameTile(width: 100, height: 100)
     var currentController : UIViewController?
     var gameDelegate : GameDelegate?
+    var horizontalLine : Line?
     
     var gameQuestions=[Question]()
     var sugesstions=[Question]()
@@ -51,9 +51,11 @@ class GameViewScene: SKScene,SceneNavigator,Alertable {
             backButton.position = CGPoint(x: -350, y : 480)
             backButton.letterLabel?.fontSize = 20
             backButton.letterLabel?.horizontalAlignmentMode = .center
+            horizontalLine = Line(width:2, height:1050, x: -250, y: 0)
+            var verticleLine = Line(width: 600, height: 3, x: 80, y: -50)
+            addChild(horizontalLine!)
+            addChild(verticleLine)
             addChild(backButton)
-            showAlert(withTitle: "Alert title", message: "Alert message")            //width : 834.0
-            //height : 1112.0
         }
     }
     
