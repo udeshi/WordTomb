@@ -18,7 +18,9 @@ class AboutGameScene: SKScene,SceneNavigator {
         let tempView = Bundle.main.loadNibNamed("AboutGame", owner: self, options: nil)?.first as? AboutGame
         if let tempView = tempView {
             tempView.sceneNavigator = self
+            tempView.frame = CGRect(origin: UIScreen.main.bounds.origin, size: UIScreen.main.bounds.size)
             view.addSubview(tempView)
+            view.frame = CGRect(origin: UIScreen.main.bounds.origin, size: UIScreen.main.bounds.size)
             view.bringSubview(toFront: tempView)
         }
     }

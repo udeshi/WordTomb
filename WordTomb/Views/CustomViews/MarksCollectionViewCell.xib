@@ -14,41 +14,50 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="MarksCollectionViewCell" customModule="WordTomb" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="150"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                <rect key="frame" x="0.0" y="0.0" width="200" height="150"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S3n-Dv-QG2">
-                        <rect key="frame" x="26" y="25" width="98" height="100"/>
+                        <rect key="frame" x="26" y="25" width="148" height="100"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="100" id="J2e-vb-2w1"/>
                         </constraints>
                     </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="len-7l-Izs">
-                        <rect key="frame" x="41" y="40" width="68" height="70"/>
+                        <rect key="frame" x="41" y="40" width="118" height="70"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coins" translatesAutoresizingMaskIntoConstraints="NO" id="GV3-li-a6g">
-                                <rect key="frame" x="0.0" y="0.0" width="24" height="70"/>
+                                <rect key="frame" x="0.0" y="0.0" width="49" height="70"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cOm-Xf-paH">
-                                <rect key="frame" x="44" y="0.0" width="24" height="70"/>
+                                <rect key="frame" x="69" y="0.0" width="49" height="70"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lmk-No-Xuk">
-                                        <rect key="frame" x="0.0" y="0.0" width="24" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="49" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GI7-eP-39B">
-                                        <rect key="frame" x="0.0" y="49.5" width="24" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="49.5" width="49" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="GI7-eP-39B" firstAttribute="top" secondItem="Lmk-No-Xuk" secondAttribute="bottom" constant="29" id="9nV-PX-lCL"/>
+                                    <constraint firstItem="GI7-eP-39B" firstAttribute="leading" secondItem="cOm-Xf-paH" secondAttribute="leadingMargin" id="HPJ-3i-HCU"/>
+                                    <constraint firstItem="Lmk-No-Xuk" firstAttribute="leading" secondItem="cOm-Xf-paH" secondAttribute="leadingMargin" id="Prd-sf-DgY"/>
+                                    <constraint firstItem="Lmk-No-Xuk" firstAttribute="top" secondItem="cOm-Xf-paH" secondAttribute="topMargin" id="U7I-uS-nzI"/>
+                                    <constraint firstItem="GI7-eP-39B" firstAttribute="trailing" secondItem="cOm-Xf-paH" secondAttribute="trailingMargin" id="VlL-Fw-HYf"/>
+                                    <constraint firstItem="Lmk-No-Xuk" firstAttribute="trailing" secondItem="cOm-Xf-paH" secondAttribute="trailingMargin" id="cVe-JG-fBF"/>
+                                    <constraint firstItem="GI7-eP-39B" firstAttribute="bottom" secondItem="cOm-Xf-paH" secondAttribute="bottomMargin" id="kOC-E5-5OU"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                     </stackView>
@@ -64,11 +73,6 @@
                 <constraint firstItem="S3n-Dv-QG2" firstAttribute="centerYWithinMargins" secondItem="len-7l-Izs" secondAttribute="centerY" id="vel-oW-Xdd"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <connections>
-                <outlet property="categoryImage" destination="S3n-Dv-QG2" id="Wac-m0-zJQ"/>
-                <outlet property="userMarks" destination="Lmk-No-Xuk" id="2O2-Em-Xfb"/>
-                <outlet property="userRanking" destination="GI7-eP-39B" id="eFe-2Z-p1P"/>
-            </connections>
         </collectionViewCell>
     </objects>
     <resources>

@@ -47,13 +47,13 @@ class Game: UIView {
     }
     
     func initiliaze(){
-        //let categoryType = UserDefaultsHandler().getData(key: "selectedCategoryId")
-          // let selectedLevel = UserDefaultsHandler().getData(key: "selectedLevel")
-        sugesstions = CoreDataHandler.fetchQuestions(level: Int(1), type: Int(1))
+        let categoryType = UserDefaultsHandler().getData(key: "selectedCategoryId")
+           let selectedLevel = UserDefaultsHandler().getData(key: "selectedLevel")
+        sugesstions = Question().fetchQuestions(level: Int(selectedLevel)!, type: Int(categoryType)!)
         if(sugesstions.count > 0){
             let randomIndex = Common().getRandomNumber(arrayCount: sugesstions.count)
             let question = sugesstions[randomIndex]
-             print(question.answer)
+             //print(question.answer)
             randomIndexes.append(["index" : 0, "letter" : Array(question.answer!)[0]])
             gameQuestions.append(question)
             sugesstions.remove(at: Int(randomIndex))
@@ -97,10 +97,6 @@ class Game: UIView {
         var startingIndex=0
         let index = Array(question.answer!).index(of:matchedLetter)
         if(randomIndexes.count-1>0){
-        // get starting index
-        var previousIndex =  randomIndexes.last
-        //let preMatchedLetter = previousIndex!["letter"] as! Character
-     
         let parentIndex = randomIndexes[randomIndexes.count-1]["index"] as! Int>0 ?randomIndexes[randomIndexes.count-1]["index"] as! Int : 0
             startingIndex = parentIndex - index!
         }else{
@@ -112,7 +108,7 @@ class Game: UIView {
         
         if(MAX_GRID_TILES >= Array(question.answer!).count + startingIndex && startingIndex >= 0){
                 randomIndexes.append(["index" : randomIndex, "letter" : matchedLetter])
-            print(question.answer)
+            //print(question.answer)
                 gameQuestions.append(question)
             print("sugg before", sugesstions.count)
             sugesstions = sugesstions.filter{$0.id != question.id}
@@ -149,7 +145,7 @@ class Game: UIView {
             }
             print(gameQuestions[questionIndex].answer!)
             if(questionIndex%2==0){
-                    print("even",gameQuestions[questionIndex].answer)
+                    //print("even",gameQuestions[questionIndex].answer)
                 for x in startingIndex...Array(gameQuestions[questionIndex].answer!).count-1{
                     //gridMap[questionIndex].insert(1, at: x)
                     gridMap[randIndex][x] = 1

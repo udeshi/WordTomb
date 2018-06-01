@@ -13,9 +13,21 @@ import GameplayKit
 
 class MenuViewController: UIViewController{
 
+    @IBOutlet weak var logoutBtn: UIButton!
     var selectedItemTag = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+        let decoded = UserDefaultsHandler().getObj(key: "Session")
+        let userDetails = NSKeyedUnarchiver.unarchiveObject(with: decoded as! Data)
+        var image = UIImage(named:"userIcon.png")
+        if(userDetails != nil) {
+            let decodedUserDetails =  userDetails as! UserDetails
+            if decodedUserDetails.profileImageUrl! != "" {
+                image = UIImage(contentsOfFile: decodedUserDetails.profileImageUrl!)
+            }
+        }
+        //set image for button
+        logoutBtn.setImage(image, for: UIControlState.normal)
     }
     
     

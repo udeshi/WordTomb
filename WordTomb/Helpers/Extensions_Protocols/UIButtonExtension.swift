@@ -28,7 +28,7 @@ class UIButtonextension: UIButton {
     
     func  setButtonStyle()  {
         let imageOnTop = true
-        let gap = 10
+        
         guard let imageView = self.imageView,
             let titleLabel = self.titleLabel else { return }
         

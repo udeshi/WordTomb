@@ -23,7 +23,7 @@ class  CoreDataHandler: NSObject {
         request.returnsObjectsAsFaults = false
         
         do {
-           let user = try getContext().fetch(request)[0]
+            let user = try getContext().fetch(request)[0]
             print(user)
             return user.id
         }
@@ -32,7 +32,7 @@ class  CoreDataHandler: NSObject {
         }
     }
     private class func createCategories (dictionary: AnyObject) -> NSManagedObject? {
-             let context = getContext()
+        let context = getContext()
         if let category = NSEntityDescription.insertNewObject(forEntityName: "Category", into: context) as? Category {
             print(dictionary)
             category.id = (dictionary["id"] as? Int32)!
@@ -95,7 +95,7 @@ class  CoreDataHandler: NSObject {
     
     
     class func initializeGameDetails (){
-         let context = getContext()
+        let context = getContext()
         let results = JSonHandler().loadJSon(filename: "Category")
         let categories = results!["results"] as! [AnyObject]
         print(categories)
@@ -110,7 +110,7 @@ class  CoreDataHandler: NSObject {
             print("saved")
         }
         catch{
-                 print(error)
+            print(error)
         }
     }
     
@@ -148,7 +148,7 @@ class  CoreDataHandler: NSObject {
         do{
             var userResult = try context.fetch(request)
             if(userResult.count > 0){
-              user =   userResult[0]
+                user =   userResult[0]
             }
             return user
         }
@@ -156,12 +156,12 @@ class  CoreDataHandler: NSObject {
             return user
         }
     }
-
+    
     class func fetchCategoryDetails() ->[Category]{
         let context = getContext()
         let request: NSFetchRequest<Category> = Category.fetchRequest()
         var categories: [Category] = []
-  
+        
         do{
             categories = try context.fetch(request)
             print(categories.count)
@@ -175,8 +175,8 @@ class  CoreDataHandler: NSObject {
         let context = getContext()
         let request: NSFetchRequest<Question> = Question.fetchRequest()
         var questions: [Question] = []
-       let predicate = NSPredicate(format: "categoryId == %d AND level == %d", type, level)
-       request.predicate = predicate
+        let predicate = NSPredicate(format: "categoryId == %d AND level == %d", type, level)
+        request.predicate = predicate
         do{
             questions = try context.fetch(request)
             print(questions.count)

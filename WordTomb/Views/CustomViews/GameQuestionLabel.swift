@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class GameQuestionTile: SKShapeNode {
+class GameQuestionTileX: SKShapeNode {
 
     var label : SKLabelNode!
     
