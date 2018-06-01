@@ -9,7 +9,7 @@
 import Foundation
 import SpriteKit
 
-class GameViewScene: SKScene,SceneNavigator {
+class GameViewScene: SKScene,SceneNavigator,Alertable {
     
     //let tile1 : GameTile = GameTile(width: 100, height: 100)
     
@@ -49,7 +49,7 @@ class GameViewScene: SKScene,SceneNavigator {
             backButton.letterLabel?.fontSize = 20
             backButton.letterLabel?.horizontalAlignmentMode = .center
             addChild(backButton)
-            //width : 834.0
+            showAlert(withTitle: "Alert title", message: "Alert message")            //width : 834.0
             //height : 1112.0
         }
     }
@@ -322,6 +322,14 @@ class GameViewScene: SKScene,SceneNavigator {
                 activeNode.run(action)
                 activeNode.removeFromParent()
                 activeNode = nil
+                
+                let results =
+                    puzzleTiles.lazy
+                        .filter { c in c.isVerified == true }
+                
+                if results.count ==  puzzleTiles.count {
+                    
+                }
             }
         }
     }
