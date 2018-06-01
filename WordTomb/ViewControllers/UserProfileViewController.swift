@@ -69,7 +69,7 @@ class UserProfileViewController: UIViewController , UICollectionViewDelegate, UI
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath)-> UICollectionViewCell {
         let cell: MarksCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath as IndexPath) as! MarksCollectionViewCell
-        cell.categoryImage = UIImageView (image: UIImage(named: historyRecords[indexPath.row].categoryImageName))
+        cell.categoryImage.image = UIImage(named: historyRecords[indexPath.row].categoryImageName)
         cell.userMarks.text = historyRecords[indexPath.row].marks
         cell.userRanking.text = historyRecords[indexPath.row].rank
         return cell

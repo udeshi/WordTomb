@@ -40,7 +40,16 @@ class  UserDefaultsHandler{
     
     //get objects
     func getObj(key:String)->Any{
-        return defaults.object(forKey: key) as! Data
+        let data = defaults.object(forKey: key) as? Data
+        if let userData = data {
+            return userData
+        } else {
+            
+            let userDetails = UserDetails(id: 0, userName: "Guest User", profileImageUrl: "", email: "")
+            let encodedData = NSKeyedArchiver.archivedData(withRootObject: userDetails)
+            //saveObj(data: encodedData, key: key)
+            return encodedData
+        }
     }
     
     //delete values
