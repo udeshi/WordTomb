@@ -17,10 +17,15 @@ class MenuViewController: UIViewController{
     var selectedItemTag = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        var userDetails: UserDetails? = nil
-        userDetails = UserDefaultsHandler().getOtherData(key: "Session") as? UserDetails
-        let image =   (userDetails != nil && (userDetails?.profileImageUrl) != "") ? UIImage(contentsOfFile:(userDetails?.profileImageUrl)!) : UIImage(named:"userIcon.png")
+        let decoded = UserDefaultsHandler().getObj(key: "Session")
+        let userDetails = NSKeyedUnarchiver.unarchiveObject(with: decoded as! Data)
+        var image = UIImage(named:"userIcon.png")
+        if(userDetails != nil) {
+            let decodedUserDetails =  userDetails as! UserDetails
+            if decodedUserDetails.profileImageUrl! != "" {
+                image = UIImage(contentsOfFile: decodedUserDetails.profileImageUrl!)
+            }
+        }
         //set image for button
         logoutBtn.setImage(image, for: UIControlState.normal)
     }

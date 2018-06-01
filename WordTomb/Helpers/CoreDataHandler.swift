@@ -16,21 +16,6 @@ class  CoreDataHandler: NSObject {
         return appDelegate.persistentContainer.viewContext
     }
     
-    private class func fetchMaxUserId()->Int32 {
-        let request: NSFetchRequest<User> = User.fetchRequest()
-        request.sortDescriptors = [NSSortDescriptor(key: "id", ascending: false)]
-        request.fetchLimit = 1
-        request.returnsObjectsAsFaults = false
-        
-        do {
-           let user = try getContext().fetch(request)[0]
-            print(user)
-            return user.id
-        }
-        catch{
-            return 0
-        }
-    }
     private class func createCategories (dictionary: AnyObject) -> NSManagedObject? {
              let context = getContext()
         if let category = NSEntityDescription.insertNewObject(forEntityName: "Category", into: context) as? Category {
@@ -104,7 +89,6 @@ class  CoreDataHandler: NSObject {
             let details = createCategories(dictionary: cat)
             print(details!)
         }
-        //_ =  categories.map{saveCategories(dictionary: $0)}
         
         do{
             try context.save()
@@ -114,109 +98,5 @@ class  CoreDataHandler: NSObject {
                  print(error)
         }
     }
-    
-    
-    class func saveUserDetails(userName: String, email: String, password:String) -> Int{
-        let context = getContext()
-        let enitity = NSEntityDescription.entity(forEntityName: "User", in: context)
-        let manageObject = NSManagedObject(entity: enitity!, insertInto: context)
-        
-        let id = fetchMaxUserId ()>0 ? fetchMaxUserId() + 1: 1
-        
-        manageObject.setValue(id, forKey: "id")
-        manageObject.setValue(userName, forKey: "userName")
-        manageObject.setValue(email, forKey: "email")
-        manageObject.setValue(password, forKey: "password")
-        
-        do{
-            try context.save()
-            print("saved")
-            return Int(id)
-        }
-        catch{
-            return 0
-        }
-    }
-    
-    class func fetchUserDetails(email: String) ->User?{
-        let context = getContext()
-        let request: NSFetchRequest<User> = User.fetchRequest()
-        var user: User? = nil
-        
-        let predicate = NSPredicate(format: "email like[c] %@", email)
-        request.predicate = predicate
-        
-        do{
-            var userResult = try context.fetch(request)
-            if(userResult.count > 0){
-              user =   userResult[0]
-            }
-            return user
-        }
-        catch{
-            return user
-        }
-    }
 
-    class func fetchCategoryDetails() ->[Category]{
-        let context = getContext()
-        let request: NSFetchRequest<Category> = Category.fetchRequest()
-        var categories: [Category] = []
-  
-        do{
-            categories = try context.fetch(request)
-            print(categories.count)
-            return categories
-        }catch{
-            return categories
-        }
-    }
-    
-    class func fetchQuestions (level: Int, type: Int)->[Question]{
-        let context = getContext()
-        let request: NSFetchRequest<Question> = Question.fetchRequest()
-        var questions: [Question] = []
-       let predicate = NSPredicate(format: "categoryId == %d AND level == %d", type, level)
-       request.predicate = predicate
-        do{
-            questions = try context.fetch(request)
-            print(questions.count)
-            return questions
-        }catch{
-            return questions
-        }
-    }
-    
-    class func updateUserProfile(profilePath: String, userId: Int32){
-        let context = getContext()
-        let request: NSFetchRequest<User> = User.fetchRequest()
-        var user: User? = nil
-        
-        let predicate = NSPredicate(format: "id like[c] %@", userId)
-        request.predicate = predicate
-        
-        do{
-            var userResult = try context.fetch(request)
-            if(userResult.count > 0){
-                user =   userResult[0]
-         
-                if((user) != nil){
-                let enitity = NSEntityDescription.entity(forEntityName: "User", in: context)
-                let manageObject = NSManagedObject(entity: enitity!, insertInto: context)
-            
-                manageObject.setValue(profilePath, forKey: "profileImageUrl")
-                
-                do{
-                    try context.save()
-                }catch{
-                    print("didn't save")
-                }
-                }
-            }
-        
-        }
-        catch{
-      print("try again")
-        }
-    }
 }

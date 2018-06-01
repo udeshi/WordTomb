@@ -21,7 +21,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     
     @IBOutlet weak var tabContentView: SKView!
     @IBOutlet weak var tableView: UITableView!
-   
+    
     var categories: [Category] = []
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,9 +45,18 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func setUserProfileImageInNavBar(){
         let button: UIButton = UIButton.init(type: .custom)
-        var userDetails: UserDetails? = nil
-        userDetails = UserDefaultsHandler().getOtherData(key: "Session") as? UserDetails
-        let image =   userDetails != nil && userDetails?.profileImageUrl != "" ? UIImage(contentsOfFile: (userDetails?.profileImageUrl)!) : UIImage(named:"userIcon.png")
+        let decoded = UserDefaultsHandler().getObj(key: "Session")
+        let userDetails = NSKeyedUnarchiver.unarchiveObject(with: decoded as! Data)
+        var image = UIImage(named:"userIcon.png")
+        if(userDetails != nil) {
+            let decodedUserDetails =  userDetails as! UserDetails
+            if decodedUserDetails.profileImageUrl! != "" {
+                image = UIImage(contentsOfFile: decodedUserDetails.profileImageUrl!)
+            }
+            print("decodedUserDetails.profileImageUrl",decodedUserDetails.profileImageUrl)
+        }
+        
+        
         //set image for button
         button.setImage(image, for: UIControlState.normal)
         //add function for button
@@ -57,42 +66,29 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         let barButton = UIBarButtonItem(customView: button)
         //assign button to nav bar
         self.navigationItem.rightBarButtonItem = barButton
+        self.navigationItem.rightBarButtonItem?.width = 10
     }
     
     func loadCategories () {
-        categories = CoreDataHandler.fetchCategoryDetails()
-        
-        
+        categories = Category().fetchCategoryDetails()
     }
     
     
     @objc func viewUserProfile(){
-        print("view it")
-        let userDetails = UserDefaultsHandler().getOtherData(key: "Session")
+        let decoded = UserDefaultsHandler().getObj(key: "Session")
+        let userDetails = NSKeyedUnarchiver.unarchiveObject(with: decoded as! Data)
         if(userDetails != nil) {
-        performSegue(withIdentifier: "UserProfileController_Segue", sender: self)
+            performSegue(withIdentifier: "UserProfileController_Segue", sender: self)
         }
-   
+        
     }
     
     
     @IBAction func menuButtonClicked(_ sender: Any) {
-//        let appDelegate  = UIApplication.shared.delegate as! AppDelegate
-//        let viewController = appDelegate.window!.rootViewController as! LoginViewController
-//        viewController.performSegue(withIdentifier: "DashboardNavigationController_Segue", sender: self)
         self.performSegue(withIdentifier: "MenuViewController_Segue", sender: self)
-        
-//        UIView.transition(with: hamgurgerMenu, duration: 0.8, options: [.curveEaseInOut, .transitionCrossDissolve] , animations: { self.hamgurgerMenu.isHidden = !self.hamgurgerMenu.isHidden })
-//        UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn, animations: {
-//            self.hamgurgerMenu.layoutIfNeeded()
-//        }) { (animationComplete) in
-//            print("The animation is complete!")
-//        }
-
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(categories.count)
         return categories.count
     }
     
@@ -101,16 +97,16 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
             let cell = tableView.dequeueReusableCell(withIdentifier: "evenDashboardCellView") as! DashboardCustomTableViewCell
             cell.evenCategoryImage.image = UIImage(named: categories[indexPath.row].image!)
             cell.evenCategoryName.text = categories[indexPath.row].name
-        cell.backgroundColor = UIColor.black.withAlphaComponent(0.4)
+            cell.backgroundColor = UIColor.black.withAlphaComponent(0.4)
             cell.evenCategoryImage.image?.resizableImage(withCapInsets: UIEdgeInsets(top:8,left:8,bottom:8,right:8), resizingMode: .stretch)
             return cell
         }else{
-        let cell = tableView.dequeueReusableCell(withIdentifier: "oddDashboardCellView") as! DashboardCustomTableViewCell
-        cell.oddCategoryImage.image = UIImage(named: categories[indexPath.row].image!)
-        cell.backgroundColor = UIColor.black.withAlphaComponent(0.4)
-        cell.oddCategoryImage.image?.resizableImage(withCapInsets: UIEdgeInsets(top:8,left:8,bottom:8,right:8), resizingMode: .stretch)
-        cell.oddCategoryName.text = categories[indexPath.row].name
-        return cell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "oddDashboardCellView") as! DashboardCustomTableViewCell
+            cell.oddCategoryImage.image = UIImage(named: categories[indexPath.row].image!)
+            cell.backgroundColor = UIColor.black.withAlphaComponent(0.4)
+            cell.oddCategoryImage.image?.resizableImage(withCapInsets: UIEdgeInsets(top:8,left:8,bottom:8,right:8), resizingMode: .stretch)
+            cell.oddCategoryName.text = categories[indexPath.row].name
+            return cell
         }
     }
     
@@ -119,40 +115,57 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         
         //navigate to gamelevel
         let reveal = SKTransition.flipHorizontal(withDuration: 1.0)
-        //self.dashboardContentView.isHidden = true
-       // let skView = self.chambers as! SKView
+        
         let chambersScreen = ChambersScene(size: CGSize(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
         
         chambersScreen.scaleMode  = .resizeFill
         chambersScreen.size = UIScreen.main.bounds.size
         currentView.presentScene(chambersScreen, transition: reveal)
     }
-
+    
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         if item.tag == 2004  {
             if(activeTab != 2004){
-              self.dashboardContentView.isHidden =  !self.dashboardContentView.isHidden
-                self.tabContentView.isHidden =  !self.tabContentView.isHidden
+                if !self.dashboardContentView.isHidden {
+                    self.dashboardContentView.isHidden =  true
+                }
+                if self.tabContentView.isHidden {
+                    self.tabContentView.isHidden =  false
+                }
                 let scene = AboutGameScene(size: CGSize(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
-                
+                activeTab = 2004
                 scene.scaleMode  = .resizeFill
                 tabContentView?.presentScene(scene)
             }else{
-                  self.dashboardContentView.isHidden =  false
-                  self.tabContentView.isHidden = !self.tabContentView.isHidden
+                if self.dashboardContentView.isHidden {
+                    self.dashboardContentView.isHidden =  false
+                }
+                if self.tabContentView.isHidden == false{
+                    self.tabContentView.isHidden =  true
+                }
+                activeTab = 0
             }
         }else if item.tag == 2005 {
             if(activeTab != 2005){
-                  self.dashboardContentView.isHidden =  !self.dashboardContentView.isHidden
-                   self.tabContentView.isHidden =  !self.tabContentView.isHidden
-            let scene = SettingsScene(size: CGSize(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
-            
-            scene.scaleMode  = .resizeFill
-            tabContentView?.presentScene(scene)
-        }else{
-                  self.dashboardContentView.isHidden =  false
-            self.tabContentView.isHidden = !self.tabContentView.isHidden
-        }
+                if !self.dashboardContentView.isHidden {
+                    self.dashboardContentView.isHidden =  true
+                }
+                if self.tabContentView.isHidden {
+                    self.tabContentView.isHidden =  false
+                }
+                let scene = SettingsScene(size: CGSize(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+                activeTab = 2005
+                scene.scaleMode  = .resizeFill
+                tabContentView?.presentScene(scene)
+            }else{
+                if self.dashboardContentView.isHidden {
+                    self.dashboardContentView.isHidden =  false
+                }
+                if !self.tabContentView.isHidden {
+                    self.tabContentView.isHidden =  true
+                }
+                activeTab = 0
+            }
         }
     }
     

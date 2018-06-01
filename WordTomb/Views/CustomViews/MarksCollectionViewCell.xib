@@ -14,7 +14,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="MarksCollectionViewCell" customModule="WordTomb" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX">
             <rect key="frame" x="0.0" y="0.0" width="200" height="150"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -73,11 +73,6 @@
                 <constraint firstItem="S3n-Dv-QG2" firstAttribute="centerYWithinMargins" secondItem="len-7l-Izs" secondAttribute="centerY" id="vel-oW-Xdd"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <connections>
-                <outlet property="categoryImage" destination="S3n-Dv-QG2" id="Wac-m0-zJQ"/>
-                <outlet property="userMarks" destination="Lmk-No-Xuk" id="ZEn-p2-C3N"/>
-                <outlet property="userRanking" destination="GI7-eP-39B" id="eFe-2Z-p1P"/>
-            </connections>
         </collectionViewCell>
     </objects>
     <resources>

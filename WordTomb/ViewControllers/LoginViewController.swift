@@ -34,34 +34,38 @@ class LoginViewController: UIViewController {
             
         }
     }
-
+    
     @IBAction func getStartedBtnClicked(_ sender: UIButton) {
         email.text = "test@gmail.com"
-        password.text = "user@123"
+        password.text = "user@1234"
         if(email.text != "" && password.text != ""){
-            let user = CoreDataHandler.fetchUserDetails(email:email.text! )
+            let user = User().fetchUserDetails(email:email.text! )
             if(( user ) != nil){
                 print("saved user" + (user?.password)!)
-                user?.password == password.text! ? print("print correct user"): print("try again")
-                let url = user?.profileImageUrl == nil ? "" : user?.profileImageUrl
-                let userdetails = UserDetails(id : (user?.id)!, userName : (user?.userName)!, profileImageUrl: url! , email : (user?.email)!)
-        
-                UserDefaultsHandler().save(data: userdetails,key: "Session")
-                performSegue(withIdentifier: "loginToDashbord",sender: nil)
-                //sceneNavigator?.navigateToScene(screenName: "Dashboard")
+                if (user?.password == password.text!) {
+                    
+                    print("print correct user")
+                    let url = user?.profileImageUrl == nil ? "" : user?.profileImageUrl
+                    let userdetails = UserDetails(id : (user?.id)!, userName : (user?.userName)!, profileImageUrl: url! , email : (user?.email)!)
+                    print("url .. ", url!)
+                    UserDefaultsHandler().save(data: userdetails,key: "Session")
+                    performSegue(withIdentifier: "loginToDashbord",sender: nil)
+                }else {
+                    //Call UIView extension method
+                    self.view.showToast(toastMessage: "Invalid credentials", duration: 0.5)
+                }
             }
-      
+            
         }
     }
     @IBAction func createAccountBtnClicked(_ sender: UIButton) {
         let reveal = SKTransition.flipHorizontal(withDuration: 1.0)
-        //let skView = self.view as! SKView
         let signupScreen = SignupScene(size: CGSize(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
         
         signupScreen.scaleMode  = .aspectFill
         signupScreen.size = UIScreen.main.bounds.size
-       self.loginForm.isHidden = true
-    currentView.presentScene(signupScreen, transition: reveal)
+        self.loginForm.isHidden = true
+        currentView.presentScene(signupScreen, transition: reveal)
     }
     @IBAction func guestBtnClciked(_ sender: UIButton) {
         sceneNavigator?.navigateToScene(screenName: "Dashboard")

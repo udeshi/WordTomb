@@ -19,13 +19,6 @@ class LoginScene: SKScene {
     }
     
     func navigateToScene(screenName: String) {
-//        let reveal = SKTransition.flipHorizontal(withDuration: 1.0)
-//
-//        let dashboardScreen = DashboardScene(size: CGSize(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
-//        if(String(describing: dashboardScreen) == screenName) {
-//            dashboardScreen.scaleMode  = .aspectFill
-//            self.view?.presentScene(dashboardScreen, transition: reveal)
-//        }
         if("Dashboard" == screenName) {
             let appDelegate  = UIApplication.shared.delegate as! AppDelegate
             let viewController = appDelegate.window!.rootViewController as! LoginViewController

@@ -17,7 +17,7 @@ class SettingsScene: SKScene,SceneNavigator {
         // add sub view
         let tempView = Bundle.main.loadNibNamed("Settings", owner: self, options: nil)?.first as? Settings
         if let tempView = tempView {
-            tempView.frame = CGRect(origin: view.center, size: view.frame.size)
+            tempView.frame = CGRect(origin: UIScreen.main.bounds.origin, size: UIScreen.main.bounds.size)
             tempView.sceneNavigator = self
             view.addSubview(tempView)
             view.bringSubview(toFront: tempView)

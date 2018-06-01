@@ -42,7 +42,7 @@ class Game: UIView {
     func initiliaze(){
         let categoryType = UserDefaultsHandler().getData(key: "selectedCategoryId")
            let selectedLevel = UserDefaultsHandler().getData(key: "selectedLevel")
-        sugesstions = CoreDataHandler.fetchQuestions(level: Int(selectedLevel)!, type: Int(categoryType)!)
+        sugesstions = Question().fetchQuestions(level: Int(selectedLevel)!, type: Int(categoryType)!)
         if(sugesstions.count > 0){
             let randomIndex = Common().getRandomNumber(arrayCount: sugesstions.count)
             let question = sugesstions[randomIndex]
@@ -90,10 +90,6 @@ class Game: UIView {
         var startingIndex=0
         let index = Array(question.answer!).index(of:matchedLetter)
         if(randomIndexes.count-1>0){
-        // get starting index
-        //var previousIndex =  randomIndexes.last
-        //let preMatchedLetter = previousIndex!["letter"] as! Character
-     
         let parentIndex = randomIndexes[randomIndexes.count-1]["index"] as! Int>0 ?randomIndexes[randomIndexes.count-1]["index"] as! Int : 0
             startingIndex = parentIndex - index!
         }else{
