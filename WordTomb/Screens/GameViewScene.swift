@@ -8,10 +8,13 @@
 
 import Foundation
 import SpriteKit
+import UIKit
 
 class GameViewScene: SKScene,SceneNavigator,Alertable {
     
     //let tile1 : GameTile = GameTile(width: 100, height: 100)
+    var currentController : UIViewController?
+    var gameDelegate : GameDelegate?
     
     var gameQuestions=[Question]()
     var sugesstions=[Question]()
@@ -267,7 +270,7 @@ class GameViewScene: SKScene,SceneNavigator,Alertable {
         if let touch = touches.first{
             let point =  touch.location(in: self)
             if backButton.contains(point) {
-                print("Back button pressed")
+               gameDelegate?.gameSceneBackButton()
             }else{
                 for tile in uniqueTiles{
                     if tile.contains(point){
@@ -328,7 +331,7 @@ class GameViewScene: SKScene,SceneNavigator,Alertable {
                         .filter { c in c.isVerified == true }
                 
                 if results.count ==  puzzleTiles.count {
-                    
+                     gameDelegate?.showGameCompleteAlert()
                 }
             }
         }
